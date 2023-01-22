@@ -90,7 +90,7 @@ const clearAll = ()=>{
                   }); 
                   clearAll();
                 } 
-                else console.log("Empty form detected.");
+                else console.log("Empty form detected. :D");
                   
               }
               }>
