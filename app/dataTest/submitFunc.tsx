@@ -94,7 +94,7 @@ const clearAll = ()=>{
                   
               }
               }>
-                Submit now {/*on the future perhaps replace this button with a submit form input and make it do some things in the backend. Doing so now would simply refresh the page and we wouldnt notice anything.*/}
+                Submit {/*on the future perhaps replace this button with a submit form input and make it do some things in the backend. Doing so now would simply refresh the page and we wouldnt notice anything.*/}
                 </button>
 
           </form>
