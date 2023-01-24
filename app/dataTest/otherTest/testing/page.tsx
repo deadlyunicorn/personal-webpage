@@ -44,11 +44,12 @@ export default function DataBaseFetch(){
   ///Rendering live changes
 
   //needed for storing fetched data//
-  interface fetchedData{
-    dataEntered:string|null
+  type dataType= string[] | null
+  interface fetchedDataTypes{
+    dataEntered: dataType
   }
   
-  const [fetchedData,setFetchedData]=useState({
+  const [fetchedData,setFetchedData]=useState<fetchedDataTypes>({
     dataEntered:null
   })
 
@@ -84,20 +85,14 @@ export default function DataBaseFetch(){
     })
     //
   })
-
-
-
-
-
-
-
   ///writing data - this works similarly to a react setState()
-  function writeData(inputted:string|null){
+  function writeData(inputted:dataType){
 
     set(dataReference,{
       dataEntered:inputted,
     })
   }
+
 
 
 
@@ -156,15 +151,26 @@ export default function DataBaseFetch(){
         <button 
           className="mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
           
-          onClick={()=>{
-            setSubmitInput(userInput)
-            writeData(userInput) /**
-            //I initially thought that "here we can put either userInput or submitInput" 
-            //BUT I was wrong
-            //as I realized that this way it doesn't get updated on the database
-            //unless you pressed the button twice
-            //this might be due to some delay that accompanies setting SubmitInput
-            //while reading its data probably is almost instant. **/
+
+            onClick={()=>{
+              if (!dataExists){
+
+                setSubmitInput(userInput)
+                writeData([userInput]) /**
+                //I initially thought that "here we can put either userInput or submitInput" 
+                //BUT I was wrong
+                //as I realized that this way it doesn't get updated on the database
+              //unless you pressed the button twice
+              //this might be due to some delay that accompanies setting SubmitInput
+              //while reading its data probably is almost instant. **/
+            }
+            else{ ///check how i am going to fix this :)
+              writeData(
+                {...fetchedData,
+                  dataEntered: [...fetchedData.dataEntered,userInput]
+                }
+              )
+            }
           }}>
           
           Submit
