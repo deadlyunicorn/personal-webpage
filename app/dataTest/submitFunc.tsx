@@ -50,6 +50,7 @@ const clearAll = ()=>{
             <input 
               placeholder="userID"
               className="rounded-md p-1"
+              value={IDvalue} //needed as IDvalue gets cleared after Submitting. If we skip this line and submit the previous values remain
               onChange={(event)=>IDsetValue(event.target.value)}
               required
               /> <br/>
@@ -57,6 +58,7 @@ const clearAll = ()=>{
               <input
               placeholder="name"
               className="rounded-md p-1"
+              value={NAMEvalue}
               onChange={(event)=>NAMEsetValue(event.target.value)}
               required
               /> <br/>
@@ -64,12 +66,14 @@ const clearAll = ()=>{
               <input
               placeholder="email"
               className="rounded-md p-1"
+              value={EMAILvalue}
               onChange={(event)=>EMAILsetValue(event.target.value)}
               required/> <br/>
 
               <input
               placeholder="imgURL"
               className="rounded-md p-1"
+              value={IMGvalue}
               onChange={(event)=>IMGsetValue(event.target.value)}
               required/> <br/>
               
