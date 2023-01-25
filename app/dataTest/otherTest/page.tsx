@@ -49,7 +49,7 @@ export default function Page(){
   return(
     <>
     <div className="bg-opacity-0 absolute">
-      <Link href='/..'  target="_self"><h3>Go back..</h3></Link>
+      <Link href='/..'  target="_self"><h3>For some reason doesn&apos;t work as intended..</h3></Link>
     </div>
     <div 
     className="h-screen flex flex-col justify-center items-center">
