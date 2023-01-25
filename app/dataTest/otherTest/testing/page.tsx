@@ -84,13 +84,15 @@ export default function DataBaseFetch(){
           //if we delete the data, then the app continues thinking
           //that there is data
         }
+        setHasLoaded(true)
 
       })
     }
     //
     fetchData()
-    setHasLoaded(true)
+
   })
+
   ///writing data - this works similarly to a react setState()
   const writeData=(input:dataType)=>{
 
@@ -202,7 +204,7 @@ export default function DataBaseFetch(){
         className="h-2/5 w-11/12 overflow-auto">
         <div className="h-4 m-2 text-center">
           {
-          (!hasLoaded)&&<p>Loading ...</p>
+          (!hasLoaded)&&<p>Loading Info...</p>
           }
 
           {
