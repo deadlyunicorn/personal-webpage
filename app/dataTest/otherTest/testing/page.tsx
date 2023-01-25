@@ -24,14 +24,15 @@ import { useEffect } from "react"
 
 
 
+//Import component for detailed Info
+import DetailedInfo from "./detailedInfo"
+
 ///App Function
 export default function DataBaseFetch(){
 
   ///updating userInput with react useState
   const [userInput,setUserInput]=useState("")
   
-  ///input that was submitted with the corresponding button
-  const [submitInput,setSubmitInput]=useState("")
 
   ////////
   ///Firebase functions bellow
@@ -45,11 +46,12 @@ export default function DataBaseFetch(){
 
   //needed for storing fetched data//
   type dataType= string[] | null
-  interface fetchedDataTypes{
-    dataEntered: dataType
+  interface dataTypesInterface{
+    dataEntered:string[] | null
   }
+
   
-  const [fetchedData,setFetchedData]=useState<fetchedDataTypes>({
+  const [fetchedData,setFetchedData]=useState<dataTypesInterface>({
     dataEntered:null
   })
 
@@ -60,7 +62,6 @@ export default function DataBaseFetch(){
   }; //the initial value of the fetchedData (no data, null for all values) // check useEffect if (data==null)
   
   //on-off switch that tells if there is data or not
-  const [dataExists,setDataExists]=useState(false);
 
   ///
   
@@ -70,13 +71,11 @@ export default function DataBaseFetch(){
       const data=snapshot.val(); //value of updated database.
 
       if (data!=null){
-        setFetchedData(data)
-        setDataExists(true)
-
+        setFetchedData(data) //removed DataExists as it was the same as fetchedData!=null which is used more in the app
       }
       else{
         setFetchedData(fetchedNull)
-        setDataExists(false) //At first I thought this was not needed,
+         //At first I thought this was not needed,
         //but as the app constantly listens for new changes
         //if we delete the data, then the app continues thinking
         //that there is data
@@ -86,14 +85,32 @@ export default function DataBaseFetch(){
     //
   })
   ///writing data - this works similarly to a react setState()
-  function writeData(inputted:dataType){
+  function writeData(input:dataType){
 
     set(dataReference,{
-      dataEntered:inputted,
+      dataEntered:input,
     })
   }
 
+  //adding data. Made my life easier using this
+  function addData(input:string){
 
+    if (fetchedData.dataEntered!=null){
+      //In our program we use addData()
+      // only when dataExists anyways
+      //Typescript makes sure we don't call
+      // this function when data doesn't exist.
+      //
+      //Error was:
+      //Type 'string[] | null' is not an array type.
+      //
+
+      set(dataReference,{
+        ...fetchedData,
+        dataEntered:[...fetchedData.dataEntered,input]
+      })
+    }
+  }
 
 
 
@@ -102,19 +119,7 @@ export default function DataBaseFetch(){
   ///JSX below
 
 
-  ////////////
-  ///Component that returns detailed info, it is called when data exists
-  function DetailedInfo(){
-    return(
-      <>
-      <p>Last database insertion was: &apos;{}&apos;</p>
-      <p>The length of the array is:{}</p>
-      <p>All database entries: {}</p>
-      <p>fetchedData entries: {}</p>
-      </>
-    )
-  }
-  ///
+
 
 
   ///Main App JSX
@@ -125,8 +130,7 @@ export default function DataBaseFetch(){
       
       
       <div>
-        <p>Hello {JSON.stringify(fetchedData)}</p>
-        <p>fetchedNull is: {JSON.stringify(fetchedNull)}</p>
+        <p>Add values to dataEntered:</p>
         
       </div>
 
@@ -153,9 +157,8 @@ export default function DataBaseFetch(){
           
 
             onClick={()=>{
-              if (!dataExists){
+              if (!(fetchedData.dataEntered!=null)){
 
-                setSubmitInput(userInput)
                 writeData([userInput]) /**
                 //I initially thought that "here we can put either userInput or submitInput" 
                 //BUT I was wrong
@@ -165,11 +168,7 @@ export default function DataBaseFetch(){
               //while reading its data probably is almost instant. **/
             }
             else{ ///check how i am going to fix this :)
-              writeData(
-                {...fetchedData,
-                  dataEntered: [...fetchedData.dataEntered,userInput]
-                }
-              )
+              addData(userInput)
             }
           }}>
           
@@ -184,7 +183,7 @@ export default function DataBaseFetch(){
             writeData(null)
           }}>
             
-          Erase Data
+          Erase ALL Data
         
         </button>
 
@@ -192,14 +191,16 @@ export default function DataBaseFetch(){
       </div>
 
 
-      <div className="h-96 w-96 overflow-auto">
+      <div className="h-2/5 w-11/12 overflow-auto">
         <div className="h-4 m-2 text-center">
 
       {
-        dataExists&& <DetailedInfo/>
+        //if we add more properties to fetchedData
+        //we need to think about dataEntered being null
+        (fetchedData.dataEntered!=null) && <DetailedInfo dataEntered={fetchedData.dataEntered} fetchedDataString={JSON.stringify(fetchedData)}/>
       }
       {
-        (!dataExists)&&<p>There is currently no data</p>
+        (!(fetchedData.dataEntered!=null))&&<p>There is currently no data...</p>
       }
         </div>
 
