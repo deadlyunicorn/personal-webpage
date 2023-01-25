@@ -3,8 +3,10 @@
 //Imported for Navigation
 import Link from "next/link"
 
-//useState
-import { useState } from "react"
+//useState,useRef
+import { useState,useRef } from "react"
+
+
 
 ///rewriting page.tsx(old) from scratch because
 ///I couldn't correct it by changing parts..
@@ -67,38 +69,45 @@ export default function DataBaseFetch(){
     dataEntered:null
   }; //the initial value of the fetchedData (no data, null for all values) // check useEffect if (data==null)
   
+
+  
   //on-off switch that tells if there is data or not
 
   ///
+
+    //not sure if async is needed here as "onValue" might be an async function
+   
+
+       //At first I thought this was not needed,
+       //but as the app constantly listens for new changes
+       //if we delete the data, then the app continues thinking
+       //that there is data
+
+
+  console.time('fetching data...');
   
   useEffect(()=>{
     //
-    const fetchData =(): void=>{
-       //not sure if async is needed here as "onValue" might be an async function
-      onValue (dataReference,  async (snapshot) => {
-        const data =  snapshot.val() //value of updated database.
 
-        if (data != null) {
-          setFetchedData(data) //removed DataExists as it was the same as fetchedData!=null which is used more in the app
-        }
-        else {
-          setFetchedData(fetchedNull)
-          //At first I thought this was not needed,
-          //but as the app constantly listens for new changes
-          //if we delete the data, then the app continues thinking
-          //that there is data
-        }
+    return onValue (dataReference,  async (snapshot) => { // return the unsubscriber https://stackoverflow.com/questions/71008942/mix-useeffect-and-firebases-onvalue 
+      const data =  snapshot.val() //value of updated database.
+ 
+      if (data != null) {
         setHasLoaded(true)
+ 
+       }
+      else {
+        setHasLoaded(true)
+      }
+    })
+ 
 
-      })
-    }
     //
-    console.time('fetching data...');
-    fetchData()
-    console.timeEnd('fetched data...');
-
+    
 
   })
+  console.timeEnd('fetched data...');
+
 
   ///writing data - this works similarly to a react setState()
   const writeData=(input:dataType)=>{
@@ -128,6 +137,13 @@ export default function DataBaseFetch(){
     }
   }
 
+  ///testing code
+  const inputRef = useRef('abc');
+  const handleInputChange = (event:any) =>{
+    inputRef.current = (event.target.value)
+  }
+  const [currValue,setCurrValue]=useState('')
+
 
 
 
@@ -141,9 +157,12 @@ export default function DataBaseFetch(){
   ///Main App JSX
   return(
     <>
-    <div className="bg-opacity-0 absolute">
-      <Link href='/..'  target="_self"><h3>Go back..</h3></Link>
+    <div id="navBar" 
+      className="bg-opacity-0 absolute">
+      <Link href='./..'  target="_parent"><h3>Go back...</h3></Link>
     </div>
+
+
     <div id="page_div"
     className="h-screen flex flex-col justify-center items-center">
       
@@ -158,16 +177,14 @@ export default function DataBaseFetch(){
 
         <input 
           className="rounded-md "
-          onChange={(e)=>{
+          onChange={(e)=>{handleInputChange(e)}
             //needed so that we store the userInput 
             //in some variable.
-            setUserInput(e.target.value) 
-
-          }}/>
+            //useRef() for less re-renders.
+          }/>
       
       </div>
-
-
+          
       <div id="button_div">
 
 
@@ -178,7 +195,7 @@ export default function DataBaseFetch(){
             onClick={()=>{
               if (!(fetchedData.dataEntered!=null)){
 
-                writeData([userInput]) /**
+                writeData([inputRef.current]) /**
                 //I initially thought that "here we can put either userInput or submitInput" 
                 //BUT I was wrong
                 //as I realized that this way it doesn't get updated on the database
@@ -187,7 +204,7 @@ export default function DataBaseFetch(){
               //while reading its data probably is almost instant. **/
             }
             else{ ///check how i am going to fix this :)
-              addData(userInput)
+              addData(inputRef.current)
             }
           }}>
           
@@ -211,8 +228,7 @@ export default function DataBaseFetch(){
 
 
       <div id="info_div"
-        className="h-2/5 w-11/12 overflow-auto">
-        <div className="h-4 m-2 text-center">
+        className="h-96 w-11/12 m-2 text-center max-w-xl overflow-auto ">
           {
           (!hasLoaded)&&<p>Loading Info...</p>
           }
@@ -226,7 +242,6 @@ export default function DataBaseFetch(){
           {
             ((fetchedData.dataEntered==null)&&hasLoaded)&&<p>There is currently no data...</p>
           }
-        </div>
       </div>
 
 
