@@ -17,7 +17,8 @@ export default function Screen(){
         <div>
 
           <input 
-            value="" //prevent users from typing while loading
+            //value="" //prevent users from typing while loading
+            readOnly={true}
             className="rounded-md "/>
         
         </div>

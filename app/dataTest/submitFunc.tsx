@@ -50,7 +50,6 @@ const clearAll = ()=>{
             <input 
               placeholder="userID"
               className="rounded-md p-1"
-              value={IDvalue}
               onChange={(event)=>IDsetValue(event.target.value)}
               required
               /> <br/>
