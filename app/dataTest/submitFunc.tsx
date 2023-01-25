@@ -57,7 +57,6 @@ const clearAll = ()=>{
               <input
               placeholder="name"
               className="rounded-md p-1"
-              value={NAMEvalue}
               onChange={(event)=>NAMEsetValue(event.target.value)}
               required
               /> <br/>
@@ -65,14 +64,12 @@ const clearAll = ()=>{
               <input
               placeholder="email"
               className="rounded-md p-1"
-              value={EMAILvalue}
               onChange={(event)=>EMAILsetValue(event.target.value)}
               required/> <br/>
 
               <input
               placeholder="imgURL"
               className="rounded-md p-1"
-              value={IMGvalue}
               onChange={(event)=>IMGsetValue(event.target.value)}
               required/> <br/>
               
