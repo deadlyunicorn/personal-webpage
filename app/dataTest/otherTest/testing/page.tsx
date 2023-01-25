@@ -93,10 +93,16 @@ export default function DataBaseFetch(){
       const data =  snapshot.val() //value of updated database.
  
       if (data != null) {
+        setFetchedData(data)
         setHasLoaded(true)
  
        }
       else {
+        setFetchedData(data)
+          //At first I thought this was not needed,
+          //but as the app constantly listens for new changes
+          //if we delete the data, then the app continues thinking
+          //that there is data
         setHasLoaded(true)
       }
     })
@@ -138,6 +144,7 @@ export default function DataBaseFetch(){
   }
 
   ///testing code
+  ///added useRef() to the input "onChange", that way I think we get less re-renders
   const inputRef = useRef('abc');
   const handleInputChange = (event:any) =>{
     inputRef.current = (event.target.value)
