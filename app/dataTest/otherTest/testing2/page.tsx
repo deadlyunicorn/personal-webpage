@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from "react"
+import Link from "next/link"
+
 
 export default function TestJ(){
   
@@ -22,6 +24,9 @@ export default function TestJ(){
   
   return(
     <>
+    <div className="bg-opacity-0 absolute">
+      <Link href='/..'  target="_self"><h3>Go back..</h3></Link>
+    </div>
     <div className="h-screen">
       <p className="text-center">hello world!</p>
 

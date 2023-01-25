@@ -1,5 +1,9 @@
 'use client'
 
+//Imported for Navigation
+import Link from "next/link"
+
+//useState
 import { useState } from "react"
 
 ///rewriting page.tsx(old) from scratch because
@@ -89,7 +93,10 @@ export default function DataBaseFetch(){
       })
     }
     //
+    console.time('fetching data...');
     fetchData()
+    console.timeEnd('fetched data...');
+
 
   })
 
@@ -134,6 +141,9 @@ export default function DataBaseFetch(){
   ///Main App JSX
   return(
     <>
+    <div className="bg-opacity-0 absolute">
+      <Link href='/..'  target="_self"><h3>Go back..</h3></Link>
+    </div>
     <div id="page_div"
     className="h-screen flex flex-col justify-center items-center">
       

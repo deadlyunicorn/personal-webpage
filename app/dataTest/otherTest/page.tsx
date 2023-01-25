@@ -1,6 +1,12 @@
 'use client'
 import { useState } from "react"
 
+//import Navigate from "@/app/components/navigation"
+//I wasn't able to create a NavBar component and navigate relatively to
+//the page it being displayed by- using link/next
+
+import Link from "next/link"
+
 ///
 import {database} from "../../firebaseConfig"
 import {ref,set, onValue } from "firebase/database"
@@ -42,6 +48,9 @@ export default function Page(){
   
   return(
     <>
+    <div className="bg-opacity-0 absolute">
+      <Link href='/..'  target="_self"><h3>Go back..</h3></Link>
+    </div>
     <div 
     className="h-screen flex flex-col justify-center items-center">
       <div>
