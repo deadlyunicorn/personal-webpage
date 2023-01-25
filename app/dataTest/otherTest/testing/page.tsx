@@ -44,15 +44,17 @@ export default function DataBaseFetch(){
 
   ///Rendering live changes
 
+  const [hasLoaded,setHasLoaded]=useState(false);
+
   //needed for storing fetched data//
   type dataType= string[] | null
   interface dataTypesInterface{
-    dataEntered:string[] | null
+    dataEntered:string[] | null 
   }
 
   
   const [fetchedData,setFetchedData]=useState<dataTypesInterface>({
-    dataEntered:null
+    dataEntered: null 
   })
 
   //storing the default value of no fetched data => used when Erasing data from the database
@@ -67,25 +69,30 @@ export default function DataBaseFetch(){
   
   useEffect(()=>{
     //
-    onValue (dataReference, (snapshot)=>{ // onValue(sourceRoute, (updatedDataEvent)=>{const data=updatedDataEvent.Value})
-      const data=snapshot.val(); //value of updated database.
+    const fetchData =(): void=>{
+       //not sure if async is needed here as "onValue" might be an async function
+      onValue (dataReference,  async (snapshot) => {
+        const data =  snapshot.val() //value of updated database.
 
-      if (data!=null){
-        setFetchedData(data) //removed DataExists as it was the same as fetchedData!=null which is used more in the app
-      }
-      else{
-        setFetchedData(fetchedNull)
-         //At first I thought this was not needed,
-        //but as the app constantly listens for new changes
-        //if we delete the data, then the app continues thinking
-        //that there is data
-      }
+        if (data != null) {
+          setFetchedData(data) //removed DataExists as it was the same as fetchedData!=null which is used more in the app
+        }
+        else {
+          setFetchedData(fetchedNull)
+          //At first I thought this was not needed,
+          //but as the app constantly listens for new changes
+          //if we delete the data, then the app continues thinking
+          //that there is data
+        }
 
-    })
+      })
+    }
     //
+    fetchData()
+    setHasLoaded(true)
   })
   ///writing data - this works similarly to a react setState()
-  function writeData(input:dataType){
+  const writeData=(input:dataType)=>{
 
     set(dataReference,{
       dataEntered:input,
@@ -93,7 +100,7 @@ export default function DataBaseFetch(){
   }
 
   //adding data. Made my life easier using this
-  function addData(input:string){
+  const addData=(input:string)=>{
 
     if (fetchedData.dataEntered!=null){
       //In our program we use addData()
@@ -125,17 +132,17 @@ export default function DataBaseFetch(){
   ///Main App JSX
   return(
     <>
-    <div 
+    <div id="page_div"
     className="h-screen flex flex-col justify-center items-center">
       
       
-      <div>
+      <div id="instruction_div">
         <p>Add values to dataEntered:</p>
         
       </div>
 
 
-      <div>
+      <div id="input_div">
 
         <input 
           className="rounded-md "
@@ -149,7 +156,7 @@ export default function DataBaseFetch(){
       </div>
 
 
-      <div>
+      <div id="button_div">
 
 
         <button 
@@ -191,21 +198,23 @@ export default function DataBaseFetch(){
       </div>
 
 
-      <div className="h-2/5 w-11/12 overflow-auto">
+      <div id="info_div"
+        className="h-2/5 w-11/12 overflow-auto">
         <div className="h-4 m-2 text-center">
+          {
+          (!hasLoaded)&&<p>Loading ...</p>
+          }
 
-      {
-        //if we add more properties to fetchedData
-        //we need to think about dataEntered being null
-        (fetchedData.dataEntered!=null) && <DetailedInfo dataEntered={fetchedData.dataEntered} fetchedDataString={JSON.stringify(fetchedData)}/>
-      }
-      {
-        (!(fetchedData.dataEntered!=null))&&<p>There is currently no data...</p>
-      }
+          {
+            //if we add more properties to fetchedData
+            //we need to think about dataEntered being null
+            (fetchedData.dataEntered!=null) && <DetailedInfo dataEntered={fetchedData.dataEntered} fetchedDataString={JSON.stringify(fetchedData)}/>
+          }
+
+          {
+            ((fetchedData.dataEntered==null)&&hasLoaded)&&<p>There is currently no data...</p>
+          }
         </div>
-
-      
-      
       </div>
 
 
