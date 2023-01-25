@@ -1,5 +1,9 @@
 //server side rendering for getInfo
 
+//Imported for Navigation
+import Link from "next/link"
+
+
 
 /// https://bobbyhadz.com/blog/react-typescript-pass-object-as-props
 interface dataTypesInterface{
@@ -40,6 +44,8 @@ export default function DetailedInfo(props:dataTypesInterface){
 
           </div>
         </div>
+        <Link href="/../.."  target="_parent"><h3>Front</h3></Link>
+
 
       </div>
       </>
