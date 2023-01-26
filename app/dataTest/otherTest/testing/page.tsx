@@ -157,6 +157,9 @@ export default function DataBaseFetch(){
   const handleInputChange = (event:any) =>{
     inputRef.current = (event.target.value)
   }
+  //I also wanted to make it so that the input box's
+  //values were cleared up after pressing a button but
+  //can't think of an easy way rn.
 
 
 
@@ -212,7 +215,7 @@ export default function DataBaseFetch(){
   //used for debugging:D                  console.log("1")
                   if(inputRef.current!=null){
 
-                    
+                    //check if inputValue is just spaces
                     if(([inputRef.current].toString()).replace(/\s/g,"").length!==0){
                       
                       writeData([inputRef.current])
