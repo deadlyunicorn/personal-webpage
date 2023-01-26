@@ -87,21 +87,34 @@ export default function DataBaseFetch(){
        //if we delete the data, then the app continues thinking
        //that there is data
 
-
+  const stopLoop=true
   
   useEffect(()=>{
+    //after some time of trying to make this work any other way
+    //I realized that onValue constantly listens somehow for events 
+    //even if we make the re-render dependency of this useEffect
+    //impossible to happen, onValue somehow manages to get it to re render the page
+    // it may be my lack of knoweledge of how onValue works
+    // tho I've spent some time trying different setups
+    // for now I am going to leave the code like that,
+    // as it seems to be working efficiently...
     //
+    console.log("reload..2")
+    
     const dataReference = ref(database,'users/'); //added because of
     const fetchedNull={ //React Hook useEffect has missing dependencies: 'dataReference' and 'fetchedNull'.
-      dataEntered:null      // Either include them or remove the dependency array
+      dataEntered:null  // Either include them or remove the dependency array
     };
 
-    return (onValue (dataReference,  (snapshot) => { // return the unsubscriber https://stackoverflow.com/questions/71008942/mix-useeffect-and-firebases-onvalue 
+    return onValue (ref(database,'users/'),  (snapshot) => { 
+      // return the unsubscriber https://stackoverflow.com/questions/71008942/mix-useeffect-and-firebases-onvalue 
+      //if we don't use return, code below gets executed twice
+      console.log("reload..1")
+      
       const data =  snapshot.val() //value of updated database.
  
       if (data != null) {
         setFetchedData(data)
-        setHasLoaded(true)
  
        }
       else {
@@ -110,20 +123,23 @@ export default function DataBaseFetch(){
           //but as the app constantly listens for new changes
           //if we delete the data, then the app continues thinking
           //that there is data
-        setHasLoaded(true)
       }
-      console.log("reload..")
-    }))
+      setHasLoaded(true)
+
+    })
  
 
     //
     
 
-  },[hasLoaded])//hasLoaded is not needed here I believe, but it stops infinite page rerenders. 
+  },[stopLoop]) //added a stopLoop instead of hasLoaded which uses State.
+  //we get one console.log less this way:D
+  
+  //hasLoaded is not needed here I believe, but it stops infinite page rerenders. 
   //will remove when I find another workaround
 
 
-  ///writing data - this works similarly to a react setState()
+  ///writing data - this works similarly to a react setState()??
   const writeData=(input:dataType)=>{
 
     set(dataReference,{
