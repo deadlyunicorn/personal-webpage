@@ -217,6 +217,8 @@ export default function DataBaseFetch(){
 
                     //check if inputValue is just spaces
                     if(([inputRef.current].toString()).replace(/\s/g,"").length!==0){
+                      //https://stackoverflow.com/questions/10261986/how-to-detect-string-which-contains-only-spaces
+
                       
                       writeData([inputRef.current])
                       
@@ -235,7 +237,7 @@ export default function DataBaseFetch(){
 
 
                   if(([inputRef.current].toString()).replace(/\s/g,"").length!==0){ //check if input is blank (only spaces)
-                     
+                
                     //i tried using useState, but Submit wasn't working on first click
                     // (it need more). Also I am tired so I wont try to find a way to
                     // store all of this expression in a variable or smth
