@@ -27,7 +27,7 @@ export default function DetailedInfo(props:dataTypesInterface){
           <p>
             All database entries:<br/> 
           </p>
-            <div className="max-w-xs h-40 break-words p-2">
+            <div className="max-w-full h-40 break-words p-2">
               {(props.fetchedDataString)}
 
           </div>
@@ -36,7 +36,7 @@ export default function DetailedInfo(props:dataTypesInterface){
           <p>
             dataEntered entries:<br/> 
           </p>
-          <div className="max-w-xs h-40 break-words p-2">
+          <div className="max-w-full h-40 break-words p-2">
             {JSON.stringify(props.dataEntered)}
 
           </div>
