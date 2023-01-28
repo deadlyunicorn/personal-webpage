@@ -1,6 +1,6 @@
 import './globals.css'
 import { AnalyticsWrapper } from './components/analytics';
-
+import NavBar from './components/navBar';
 export default function RootLayout({
   children,
 }: {
@@ -13,7 +13,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
+   
       <body>
+        <NavBar/>
         {children}
         <AnalyticsWrapper/>  
       </body>
