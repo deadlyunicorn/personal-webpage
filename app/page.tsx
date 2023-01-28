@@ -16,7 +16,7 @@ export default function Home() {
           <div 
             className="max-h-[40vh] border-white border-t border-l  text-center bg-red-100 bg-opacity-50 rounded-b-md shadow-lg flex flex-col overflow-auto  ">
 
-                <div className="font-light p-1">
+                <div className="font-light p-1 text-black">
 
                 Just testing some stuff here. Feel&nbsp;free to explore this project, ask me any questions and&nbsp;
                   <a 
@@ -27,7 +27,7 @@ export default function Home() {
                   </button></a> 
                   &nbsp;with&nbsp;me.
                 </div>
-                <div className="border-t border-black m-2 ">
+                <div className="border-t border-black m-2 text-black">
                   <p className="p-1 font-semibold "> BIO</p>  
                   <p className="font-light">I am a Web developer.</p>
                   <p className="font-light">Currently I am interested&nbsp;in:</p>
