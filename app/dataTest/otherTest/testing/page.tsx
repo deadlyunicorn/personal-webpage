@@ -14,7 +14,7 @@
       ///importing firebase libraries
       
       //getting the database config
-      import {database} from "../../../firebaseConfig"
+      import {database} from "../../../components/firebaseConfig"
       /*
       database = getDatabase(app)
       app = initializeApp(firebaseConfig);

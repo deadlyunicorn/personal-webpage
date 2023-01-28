@@ -7,7 +7,7 @@ import { useState } from "react"
 
 
 ///
-import {database} from "../../firebaseConfig"
+import {database} from "../../components/firebaseConfig"
 import {ref,set, onValue } from "firebase/database"
 import { useEffect } from "react"
 ///
