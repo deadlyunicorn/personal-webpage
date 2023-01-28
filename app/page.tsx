@@ -1,91 +1,88 @@
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="h-screen bg-gradient-to-b from-blue-300 to-red-300 overflow-hidden">
+      <div className=" h-screen flex flex-col justify-center items-center ">
+        <div className="text-white drop-shadow-[1px_1px_3px_rgba(200,50,200,1)] sm:text-[3vh] md:text-[5vh] md:pb-3 text-[2vh] hover:animate-pulse animate-bounce">DeadlyUnicorn</div>
+        <div className=" max-w-md w-3/6 shadow-xl rounded-t-md sm:h-72 overflow-hidden "><a href="https://www.linkedin.com/in/Alexandros-Petrache/" target="_blank" rel="noopener noreferrer"><Image src="/profilePicture_withShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="sm:-translate-y-12  "/></a></div>
+        <div 
+          className="border-white border-t border-l max-w-md w-3/6 text-center bg-red-100 bg-opacity-50 rounded-b-md py-2 shadow-lg">
+              <div className="font-light p-1">
+
+              Just testing some stuff here. Feel&nbsp;free to explore this project, ask me any questions and&nbsp;
+                <a 
+                  href="https://www.linkedin.com/in/Alexandros-Petrache/" 
+                  target="_blank" rel="noopener noreferrer" 
+                  className=" text-blue-600 hover:text-blue-400 focus-within:text-rose-600 focus:"><button className="hover:underline ">
+                    connect
+                </button></a> 
+                &nbsp;with&nbsp;me.
+              </div>
+              <div className="border-t border-black m-2">
+                <p className="p-1 font-semibold "> BIO</p>  
+                <p className="font-light">I am a Web developer.</p>
+                <p className="font-light">Currently I am interested&nbsp;in:</p>
+                <ol className="list-disc list-inside text-left mt-2">
+                  <li>
+                    <a 
+                      href="https://nextjs.org"
+                      target="_blank" rel="noopener noreferrer">
+                        
+                      <button>
+                        <span 
+                          className="p-1 drop-shadow-[-1px_1.3px_1.5px_rgba(0,0,0,1)]  text-slate-200 gradient font-bold text-lg">
+                            NextJS
+                        </span>
+                      </button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a 
+                      href="https://svelte.dev"
+                      target="_blank" rel="noopener noreferrer">
+                      <button>
+                        <span 
+                        className="p-1 drop-shadow-[-1px_1.3px_2px_rgba(255,60,60,1)]  text-white font-bold text-lg">Svelte
+                        </span>
+                      </button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a 
+                      href="https://tailwindcss.com"
+                      target="_blank" rel="noopener noreferrer">
+                      <button>
+                        <span 
+                        className="p-1 drop-shadow-[-1px_1.3px_1.6px_rgba(40,90,155,1)]  text-white font-bold text-lg">TailwindCSS
+                        </span>
+                      </button>
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://reactnative.dev"
+                      target="_blank" rel="noopener noreferrer">
+                      <button>
+                        <span 
+                        className="drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)]">
+                          <span 
+                            className="p-1 drop-shadow-[-0.9px_-0.6px_0.4px_rgba(255,255,255,1)]  text-blue-300 hover:text-cyan-300 font-semibold text-lg ">
+                              ReactNative
+                          </span>
+                        </span>
+                      </button>
+                    </a>
+                  </li>
+                </ol>
+              </div>
+                  
         </div>
+      
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }
