@@ -2,8 +2,6 @@
 
 //imports
 
-      //Imported for Navigation
-      import Link from "next/link"
       
       //useState,useRef
       import { useState,useRef } from "react"
@@ -190,12 +188,6 @@ export default function DataBaseFetch(){
   ///Main App JSX
   return(
     <>
-      <div id="navBar" 
-        className="bg-opacity-0 absolute">
-        <Link href='./..'  target="_parent"><h3>Go back...</h3></Link>
-      </div>
-
-
       <div id="page_div"
       className="h-screen flex flex-col justify-center items-center">
         
