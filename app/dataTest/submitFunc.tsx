@@ -1,7 +1,5 @@
 'use client'
 import { getDatabase,ref,set } from "firebase/database";
-import { Input } from "postcss";
-import { stringify } from "querystring";
 import { useState } from "react";
 
 interface userInputs{
@@ -31,7 +29,6 @@ export default function SubmitButton(){
     EMAIL:[] as string[],
     IMG:[] as string[]
   });
-const [artists, setArtists] = useState(["a"])
 
 const clearAll = ()=>{
   IDsetValue('')
@@ -41,15 +38,15 @@ const clearAll = ()=>{
 
 }
   return(
-    <div>
+    <div className="max-w-sm p-6">
 
       <div 
-        className="border border-black p-2 rounded-md flex flex-col bg-slate-500 border-t-blue-800 border-l-blue-800 pt-4">
-          <form className="border border-black p-2 rounded-md flex flex-col bg-slate-400 shadow-lg border-t-white border-l-white">
+        className=" overflow-auto border border-black p-2 rounded-md flex flex-col bg-slate-500 border-t-blue-800 border-l-blue-800 pt-4">
+          <form className="border border-black p-2 rounded-md flex flex-col bg-slate-400 shadow-lg border-t-white border-l-white text-black">
 
             <input 
               placeholder="userID"
-              className="rounded-md p-1"
+              className="rounded-md p-1 dark:text-white my-2"
               value={IDvalue} //needed as IDvalue gets cleared after Submitting. If we skip this line and submit the previous values remain
               onChange={(event)=>IDsetValue(event.target.value)}
               required
@@ -57,7 +54,7 @@ const clearAll = ()=>{
               
               <input
               placeholder="name"
-              className="rounded-md p-1"
+              className="rounded-md p-1 dark:text-white my-2"
               value={NAMEvalue}
               onChange={(event)=>NAMEsetValue(event.target.value)}
               required
@@ -65,14 +62,14 @@ const clearAll = ()=>{
 
               <input
               placeholder="email"
-              className="rounded-md p-1"
+              className="rounded-md p-1 dark:text-white my-2"
               value={EMAILvalue}
               onChange={(event)=>EMAILsetValue(event.target.value)}
               required/> <br/>
 
               <input
               placeholder="imgURL"
-              className="rounded-md p-1"
+              className="rounded-md p-1 dark:text-white my-2"
               value={IMGvalue}
               onChange={(event)=>IMGsetValue(event.target.value)}
               required/> <br/>
@@ -100,7 +97,7 @@ const clearAll = ()=>{
           </form>
       
       </div>
-      <div className="border border-black  rounded-md p-1 bg-amber-300 mt-6">
+      <div className="border border-black  rounded-md p-1 bg-amber-300 dark:bg-amber-700 dark:bg-opacity-65 mt-6 text-black">
         <p className="text-center">
           The last info you submitted is: <br/>
           ID: {temp.ID[temp.ID.length-1]} <br/> 
@@ -109,7 +106,7 @@ const clearAll = ()=>{
           IMG: {temp.IMG[temp.IMG.length-1]} 
         </p>
       </div>
-      <div className="border border-black  rounded-md p-1 bg-amber-300 mt-6">
+      <div className="border border-black  rounded-md p-1 bg-amber-300 dark:bg-amber-700 dark:bg-opacity-65 mt-6 text-black">
         <p className="text-center">
           All of the info you have submitted so far is: <br/>
           ID: {JSON.stringify(temp.ID)} <br/> 

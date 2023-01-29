@@ -24,12 +24,12 @@ export default function TestJ(){
   return(
     <>
     <div className="h-screen flex justify-center items-center">
-      <div className="w-96 h-4/6 " >
-        <div className="border-black rounded-md border h-full bg-white bg-opacity-40">
+      <div className="max-w-96 rounded-md p-4 sm:h-[700px]  " >
+        <div className=" max-w-sm flex flex-col h-3/4 max-h-96 sm:max-h-[650px]  overflow-auto sm:h-[600px]  bg-white bg-opacity-40 rounded-md border border-black dark:border-neutral-300">
 
-          <div className=" my-2 px-2 ">
+          <div className=" my-2 px-2 text-center">
 
-            <p className="text-center">hello world!</p>
+            <p >hello world!</p>
 
             <p> object 1 test displaying data</p>
 
@@ -51,7 +51,7 @@ export default function TestJ(){
                 setCounter(counter+1)
                 
               }}
-              className="border border-black rounded-md bg-white p-1 w-2/4">
+              className="border-t border-l-2 border-black neutral-black dark:border-purple-300 rounded-md bg-white dark:bg-zinc-900 p-1 w-2/4">
               Submit 
             </button>
 
@@ -59,19 +59,19 @@ export default function TestJ(){
           
           <div className="h-2/3">
 
-          <div className="  flex m-2 h-full flex-col break-all">
-            <div className="m-2 border-y border-black h-1/3 overflow-auto">
-              ID: <span className="text-indigo-700 drop-shadow-md">{temp2.ID}</span>
+          <div className=" flex m-2  flex-col break-all">
+            <div className="m-2 border-y border-black dark:border-neutral-300  ">
+              ID: <span className="text-indigo-700 dark:text-indigo-400 drop-shadow-md shadow-black">{temp2.ID}</span>
             </div>
 
-            <div className="m-2 break-all border-y border-black h-1/3 overflow-auto">
-              ID.stringify(): <span className="text-indigo-700 drop-shadow-md">{JSON.stringify(temp2.ID)}</span>
+            <div className="m-2 break-all border-y border-black dark:border-neutral-300  ">
+              ID.stringify(): <span className="text-indigo-700 dark:text-indigo-400 drop-shadow-md shadow-black">{JSON.stringify(temp2.ID)}</span>
             </div>
 
-            <div className="m-2 border-y border-black overflow-auto break-words h-1/3">
+            <div className="m-2 border-y border-black dark:border-neutral-300 ">
               Here &quot;break-words&quot; class, worked better than break-all
               <br/>
-              Parent Object Stringified:<br/><span className=" text-indigo-700 drop-shadow-md">{JSON.stringify(temp2)}</span>
+              Parent Object Stringified:<br/><span className="  break-words text-indigo-700 dark:text-indigo-400 drop-shadow-md shadow-black">{JSON.stringify(temp2)}</span>
             </div>
           </div>
           </div>

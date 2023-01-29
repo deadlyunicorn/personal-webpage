@@ -48,22 +48,22 @@ export default function Page(){
   return(
     <>
     <div 
-    className="h-screen flex flex-col justify-center items-center">
-      <div>
+    className="h-screen flex flex-col justify-center items-center ">
+      <div >
 
       <p id="hell">
         Hello
       </p>
       </div>
       <input 
-        className="rounded-md "
+        className="rounded-md dark:text-white"
         onChange={(e)=>{
           setInput(e.target.value)
           }}/>
-      <div>
+      <div className="text-black">
 
         <button 
-          className="mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
+          className="m-2 bg-slate-200  dark:bg-slate-600 dark:border-l-cyan-800 dark:border-t-cyan-800 border-b-0 border-r-0 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg "
           onClick={()=>{
             setStored(input)
             writeUserData(fetchedData+input+" ")
@@ -72,7 +72,7 @@ export default function Page(){
           Submit
         </button>
         <button
-          className="mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
+          className="dark:bg-slate-600 dark:border-l-cyan-800 dark:border-t-cyan-800 border-b-0 border-r-0  mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
           onClick={()=>{
             writeUserData("")
           }}
@@ -80,11 +80,11 @@ export default function Page(){
           Erase Data
         </button>
       </div>
-      <div className="h-96 w-96 overflow-auto ">
+      <div className="max-h-96 max-w-sm p-4 overflow-auto flex flex-col break-text dark:bg-cyan-900 dark:bg-opacity-20 rounded-md m-7">
 
         <p className="h-4 m-2">Last database insertion:{storedInput} {}</p>
         
-        <p>All database entries: {JSON.stringify(fetchedData)}</p>
+        <p>All database entries: <br/>{JSON.stringify(fetchedData)}</p>
       </div>
     </div>
 

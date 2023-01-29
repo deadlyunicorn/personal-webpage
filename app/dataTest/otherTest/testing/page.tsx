@@ -189,10 +189,10 @@ export default function DataBaseFetch(){
   return(
     <>
       <div id="page_div"
-      className="h-screen flex flex-col justify-center items-center">
+      className="h-screen flex flex-col justify-center items-center dark:bg-gradient-to-t dark:from-gray-900 dark:to-neutral-900">
         
         <div id="instruction_div">
-          <p>Add values to dataEntered:</p>
+          <p>Add values to &quot;dataEntered&quot;:</p>
           
         </div>
 
@@ -213,7 +213,7 @@ export default function DataBaseFetch(){
 
 
           <button 
-            className="mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
+            className="dark:bg-neutral-800 dark:border-l-cyan-700 dark:border-t-teal-700  border-b-0 border-r-0 m-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
             
 
               onClick={()=>{
@@ -262,7 +262,7 @@ export default function DataBaseFetch(){
           </button>
 
           <button
-            className="mt-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
+            className="dark:bg-neutral-800 dark:border-l-cyan-700 dark:border-t-teal-700 border-b-0 border-r-0 m-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
             
             onClick={()=>{
               writeData(null)
@@ -277,7 +277,7 @@ export default function DataBaseFetch(){
 
 
         <div id="info_div"
-          className="h-96 w-11/12 m-2 text-center max-w-xl overflow-auto ">
+          className="max-h-96 w-11/12 m-2 text-center max-w-xl overflow-auto  ">
             {
             (!hasLoaded)&&<p>Loading Info...</p>
             }
