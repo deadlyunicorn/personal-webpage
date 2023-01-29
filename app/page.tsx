@@ -33,7 +33,7 @@ export default function Home() {
                   <p className="font-light">Currently I am interested&nbsp;in:</p>
                   <div>
                     
-                    <ol className="list-disc list-inside text-left mt-2 grid grid-cols-2">
+                    <ol className="list-disc list-inside text-left mt-2 grid grid-cols-2 min-h-[60px]">
                       <li>
                         <a 
                           href="https://nextjs.org"
@@ -77,7 +77,7 @@ export default function Home() {
                           target="_blank" rel="noopener noreferrer">
                           <button>
                             <span 
-                            className="drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)]">
+                            className="drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)] break-text">
                               <span 
                                 className="p-1 drop-shadow-[-0.9px_-0.6px_0.4px_rgba(255,255,255,1)]  text-blue-300 hover:text-cyan-300 font-semibold text-lg ">
                                   ReactNative

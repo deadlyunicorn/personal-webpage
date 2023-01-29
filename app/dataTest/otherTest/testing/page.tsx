@@ -210,7 +210,7 @@ export default function DataBaseFetch(){
         
         </div>
             
-        <div id="button_div">
+        <div id="button_div" className="flex">
 
 
           <button 
@@ -278,7 +278,7 @@ export default function DataBaseFetch(){
 
 
         <div id="info_div"
-          className="max-h-96 w-11/12 m-2 text-center max-w-xl overflow-auto  ">
+          className=" m-2 text-center max-w-xl overflow-auto  ">
             {
             (!hasLoaded)&&<p>Loading Info...</p>
             }

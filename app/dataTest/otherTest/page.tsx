@@ -48,8 +48,9 @@ export default function Page(){
   return(
     <>
     <div 
-    className="h-screen bg-gradient-to-b from-green-200 to-pink-200 dark:from-gray-900 dark:to-black">
-      <div className="overflow-auto p-20 flex flex-col justify-center items-center ">
+    className="h-screen bg-gradient-to-b from-green-200 to-pink-200 dark:from-gray-900 dark:to-black ">
+
+      <div className="p-20 flex flex-col justify-center items-center ">
       <div>
 
       <p id="hell">
@@ -86,13 +87,14 @@ export default function Page(){
           </span>
         </button>
       </div>
-      <div className="border-l border-t  max-h-96 max-w-sm p-4 overflow-auto flex flex-col break-text dark:bg-cyan-900 dark:bg-opacity-20 rounded-md m-7 bg-white bg-opacity-20">
+      <div className="border-l border-t   p-4  dark:bg-cyan-900 dark:bg-opacity-20 rounded-md mt-7 bg-white bg-opacity-20 ">
 
-        <p className="h-4 m-2">Last database insertion:{storedInput} {}</p>
+        <p className="m-2">Last database insertion:{storedInput} {}</p>
         
         <p>All database entries: <br/>{JSON.stringify(fetchedData)}</p>
       </div>
       </div>
+
     </div>
 
    
