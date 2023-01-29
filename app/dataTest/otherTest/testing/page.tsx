@@ -189,8 +189,9 @@ export default function DataBaseFetch(){
   return(
     <>
       <div id="page_div"
-      className="h-screen flex flex-col justify-center items-center dark:bg-gradient-to-t dark:from-gray-900 dark:to-neutral-900">
-        
+      className="h-screen overflow-auto dark:bg-gradient-to-t dark:from-gray-900 dark:to-neutral-900">
+        <div className=" p-20  flex flex-col justify-center items-center ">
+
         <div id="instruction_div">
           <p>Add values to &quot;dataEntered&quot;:</p>
           
@@ -295,6 +296,7 @@ export default function DataBaseFetch(){
         </div>
 
 
+        </div>
 
       </div>
     </>

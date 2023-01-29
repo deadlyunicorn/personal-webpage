@@ -23,9 +23,11 @@ export default function TestJ(){
   
   return(
     <>
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-screen overflow-auto dark:bg-gradient-to-b dark:from-zinc-800 dark:to-neutral-900">
+      <div className="flex justify-center items-center p-20">
+
       <div className="max-w-96 rounded-md p-4 sm:h-[700px]  " >
-        <div className=" max-w-sm flex flex-col h-3/4 max-h-96 sm:max-h-[650px]  overflow-auto sm:h-[600px]  bg-white bg-opacity-40 rounded-md border border-black dark:border-neutral-300">
+        <div className="dark:bg-stone-900 max-w-sm flex flex-col   bg-white bg-opacity-40 rounded-md border border-black dark:border-neutral-300">
 
           <div className=" my-2 px-2 text-center">
 
@@ -35,7 +37,7 @@ export default function TestJ(){
 
           </div>
 
-          <div className=" my-2 px-2 flex flex-col justify-center items-center">
+          <div className=" my-2 px-2 flex flex-col justify-center items-center ">
 
             <p> {JSON.stringify(objectTest1)}</p>
             <p> {JSON.stringify(objectTest1.inputData)}</p>
@@ -61,7 +63,7 @@ export default function TestJ(){
 
           <div className=" flex m-2  flex-col break-all">
             <div className="m-2 border-y border-black dark:border-neutral-300  ">
-              ID: <span className="text-indigo-700 dark:text-indigo-400 drop-shadow-md shadow-black">{temp2.ID}</span>
+              ID: <span className=" text-indigo-700 dark:text-indigo-400 drop-shadow-md shadow-black">{temp2.ID}</span>
             </div>
 
             <div className="m-2 break-all border-y border-black dark:border-neutral-300  ">
@@ -80,6 +82,8 @@ export default function TestJ(){
         </div>
 
       </div>
+      </div>
+
     </div>
     </>
   )

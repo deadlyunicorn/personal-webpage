@@ -2,7 +2,7 @@ import Link from "next/link"
 export default function NavBar(){
 
   return(
-  <nav className='absolute bg-neutral-900  rounded-b-sm shadow-md  h-16 max-h-screen w-screen'>
+  <nav className=' bg-neutral-900  rounded-b-sm shadow-md  h-16 max-h-screen w-screen absolute z-10'>
     <div className='p-2 flex items-center justify-around h-full'>
       <div className=' border-x  border-slate-700 hover:border-slate-500 px-2 sm:text-base font-light font-sans text-cyan-300  focus-within:text-red-200 hover:text-cyan-200  '><Link href={"/"}><button>Homepage <span className="hidden sm:inline">🏠</span></button></Link> </div>
       <div className='border-x  border-slate-700 hover:border-slate-500 px-2 sm:text-base font-light font-sans text-cyan-300  focus-within:text-red-200 hover:text-cyan-200 '><Link href={"/dataTest"}><button>DataTest</button></Link> </div>

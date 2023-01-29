@@ -3,18 +3,18 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="h-screen bg-gradient-to-b from-blue-300 to-red-300 overflow-hidden flex flex-col justify-center items-center -z-20 absolute w-screen">
-      <div className="  h-auto sm:mt-0  sm:max-w-xs lg:max-w-md max-w-xs mt-4 lg:h-auto  ">
-        <div className="  h-full  flex flex-col justify-center items-center  max-h-[80vh]  ">
+    <div className=" bg-gradient-to-b from-blue-300 to-red-300 h-screen overflow-auto">
+        <div className="p-20 flex flex-col justify-center items-center ">
+        <div className="sm:max-w-xs lg:max-w-md max-w-xs">
           
-          <div className="text-white drop-shadow-[1px_1px_3px_rgba(200,50,200,1)] sm:text-[4vh] text-[3vh] hover:animate-pulse animate-bounce ">DeadlyUnicorn</div>
+          <div className="text-white drop-shadow-[1px_1px_3px_rgba(200,50,200,1)]  text-4xl hover:animate-pulse animate-bounce  text-center">DeadlyUnicorn</div>
           
-          <div className=" shadow-xl rounded-t-md sm:h-56  h-48 overflow-hidden border border-white w-full lg:h-96 "><a href="https://www.linkedin.com/in/Alexandros-Petrache/" target="_blank" rel="noopener noreferrer">
+          <div className=" shadow-xl rounded-t-md sm:h-56 h-48 overflow-hidden border border-white w-full lg:h-96 "><a href="https://www.linkedin.com/in/Alexandros-Petrache/" target="_blank" rel="noopener noreferrer">
             <Image src="/profilePicture_withShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="md:-translate-y-14  -translate-y-12 "/></a>
           </div>
           
           <div 
-            className="max-h-[40vh] border-white border-t border-l  text-center bg-red-100 bg-opacity-50 rounded-b-md shadow-lg flex flex-col overflow-auto  ">
+            className=" border-white border-t border-l  text-center bg-red-100 bg-opacity-50 rounded-b-md shadow-lg flex flex-col   ">
 
                 <div className="font-light p-1 text-black">
 
@@ -90,13 +90,11 @@ export default function Home() {
                   </div>
 
                 </div>
-                    
-          </div>
-
+           </div>
+           </div>
         </div>
 
       
-      </div>
     </div>
   )
 }
