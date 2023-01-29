@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="h-screen bg-gradient-to-b from-blue-300 to-red-300 overflow-hidden flex flex-col justify-center items-center ">
+    <div className="h-screen bg-gradient-to-b from-blue-300 to-red-300 overflow-hidden flex flex-col justify-center items-center -z-20 absolute w-screen">
       <div className="  h-auto sm:mt-0  sm:max-w-xs lg:max-w-md max-w-xs mt-4 lg:h-auto  ">
         <div className="  h-full  flex flex-col justify-center items-center  max-h-[80vh]  ">
           
