@@ -266,7 +266,8 @@ export default function DataBaseFetch(){
             className="dark:bg-neutral-800 dark:border-l-cyan-700 dark:border-t-teal-700 border-b-0 border-r-0 m-2 bg-slate-200 rounded-md p-1 border-2 border-l-4 border-l-teal-200 border-t-teal-200 shadow-lg"
             
             onClick={()=>{
-              writeData(null)
+              //writeData(null)
+              alert("oopsies, you are late :p, check 22-2-2023")
             }}>
               
             Erase ALL Data
