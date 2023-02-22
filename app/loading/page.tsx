@@ -1,7 +1,12 @@
 import Image from "next/image"
+import NavBar from "../components/navBar"
 export default function Screen(){
   return(
     <>
+      <div className="absolute z-30">
+        <NavBar/>
+      </div>
+
       <div className="h-screen absolute w-screen bg-gradient-to-b from-neutral-800 to-neutral-700 z-20 overflow-auto flex-col  items-center justify-center flex">
       
         <div className="flex flex-col  items-center justify-center   p-20 ">
