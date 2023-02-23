@@ -7,7 +7,6 @@ export default function NavBar(){
       
       <NavBarElement href="/" content={<>Homepage <span className="hidden sm:inline">🏠</span></>}/>
       <NavBarElement href="/dataTest" content="DataTest"/>
-      <NavBarElement href="/dataTest" content="DataTest"/>
       <NavBarElement href="/dataTest/otherTest" content="OtherTest"/>
 
       <div className='group'>
