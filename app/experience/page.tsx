@@ -40,8 +40,8 @@ const NewSection=(props:{children:ReactNode,title:string})=>{
 
       <button
       className="
-      drop-shadow-[1px_1px_1px_rgba(100,200,100,1)]
-      text-yellow-300 underline hover:text-yellow-200 text-2xl"   
+      drop-shadow-[1px_1px_2px_rgba(100,100,200,1)]
+      text-red-300 underline hover:text-red-200 text-2xl"   
       onClick={()=>{toggleSwitch(!sectionSwitch)}}>
         
         {props.title}
