@@ -2,7 +2,7 @@ import Link from "next/link"
 export default function NavBar(){
 
   return(
-  <nav className=' bg-neutral-900  rounded-b-sm shadow-md  h-16 max-h-screen w-screen absolute z-10'>
+  <nav className=' bg-neutral-900  rounded-b-sm shadow-md  h-12 max-h-screen w-screen absolute z-10'>
     <div className='p-2 flex items-center justify-around h-full'>
       
       <NavBarElement href="/" content={<>Homepage <span className="hidden sm:inline">🏠</span></>}/>
