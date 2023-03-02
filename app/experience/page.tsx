@@ -4,7 +4,7 @@ import { ReactNode, useState } from "react";
 
 const ExperienceSection = () =>(
   <>
-      <div className=" bg-gradient-to-b from-blue-300 to-red-300 h-screen overflow-auto -z-20 absolute">
+      <div className=" bg-gradient-to-b from-blue-300 to-red-300 h-screen w-full overflow-auto -z-20 absolute">
         <div className="p-20  flex flex-col justify-center items-center ">
           <div className="sm:max-w-xs lg:max-w-md max-w-sm">
 
