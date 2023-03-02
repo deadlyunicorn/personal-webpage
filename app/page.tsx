@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import { ReactNode } from 'react'
+import './globals.css'
+
 
 
 export default function Home() {
@@ -22,9 +25,9 @@ export default function Home() {
                   <a 
                     href="https://www.linkedin.com/in/Alexandros-Petrache/" 
                     target="_blank" rel="noopener noreferrer" 
-                    className=" text-blue-600 hover:text-blue-400 focus-within:text-rose-600 focus:"><button className="hover:underline ">
+                    className=" text-blue-600 hover:text-blue-400 focus-within:text-rose-600 hover:underline">
                       connect
-                  </button></a> 
+                  </a> 
                   &nbsp;with&nbsp;me.
                 </div>
                 <div className="border-t border-black m-2 text-black flex flex-col ">
@@ -34,60 +37,75 @@ export default function Home() {
                   
                     
                     
-                    <ol className=" max-h-fit list-disc list-inside text-left mt-2 flex flex-col min-h-[60px]">
+                    <ol className="max-h-fit text-left mt-2 flex flex-col min-h-[60px]">
                       
-                      <li className="ml-2" >
-                        <a 
-                          href="https://nextjs.org"
-                          target="_blank" rel="noopener noreferrer">
-                            
-                          <button>
-                            <span 
-                              className="drop-shadow-[-1px_1.3px_1.5px_rgba(0,0,0,1)]  text-slate-200 gradient font-bold text-lg">
-                                NextJS
+                      <ListItem link="https://nextjs.org">
+                        <span 
+                          className="
+                          drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)]
+                          bg-zinc-900 p-1 rounded-lg">
+                            <span className="drop-shadow-[1.2px_1.3px_0.9px_rgba(0,0,0,1)] 
+                          text-slate-300 font-bold text-lg">
+                              NextJS
                             </span>
-                          </button>
-                        </a>
-                      </li>
+                        </span>
+                      </ListItem>
 
-                      <li className="ml-2" >
-                        <a 
-                          href="https://svelte.dev"
-                          target="_blank" rel="noopener noreferrer">
-                          <button>
-                            <span 
-                            className="drop-shadow-[-1px_1.3px_2px_rgba(255,60,60,1)]  text-white font-bold text-lg">Svelte
-                            </span>
-                          </button>
-                        </a>
-                      </li>
-                      <li className="ml-2" >
-                        <a 
-                          href="https://tailwindcss.com"
-                          target="_blank" rel="noopener noreferrer">
-                          <button>
-                            <span 
-                            className="drop-shadow-[-1px_1.3px_1.6px_rgba(40,90,155,1)]  text-white font-bold text-lg ">TailwindCSS
-                            </span>
-                          </button>
-                        </a>
-                      </li>
-                      <li className="ml-2">
-                        <a 
-                          href="https://reactnative.dev"
-                          target="_blank" rel="noopener noreferrer">
-                          <button>
-                            <span 
-                            className="drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)] ">
-                              <span 
-                                className="  p-1 drop-shadow-[-0.9px_-0.6px_0.4px_rgba(255,255,255,1)]  text-blue-300 hover:text-cyan-300 font-semibold text-lg ">
-                                  ReactNative
-                              </span>
-                            </span>
-                          </button>
-                        </a>
-                      </li>
+
+                      <ListItem link="https://www.mongodb.com">
+                        <span
+                          className="
+                          font-bold
+                          text-green-400
+                          drop-shadow-[0px_-0.3px_1.4px_rgba(19,78,74,1)]
+                          
+                          bg-teal-900 p-1 rounded-lg">
+                          
+                          <span className="drop-shadow-[0.7px_1px_0.9px_rgba(0,23,36,1)] text-lg">
+                          MongoDB
+                          </span>
+                        </span>
+                      </ListItem>
+
+                      <ListItem link="https://www.framer.com/motion/">
+                        <span
+                        className="text-lg text-white
+                        drop-shadow-[0px_-1px_1.4px_rgba(232,121,249,1)] 
+                        bg-zinc-900 p-1 rounded-lg">
+                          Framer <span className="text-fuchsia-400">Motion</span>
+                        </span>
+                      </ListItem>
+
+                      <ListItem link="https://svelte.dev">
+                        <span 
+                        className="drop-shadow-[0px_-0.3px_1.4px_rgba(255,60,60,1)]  text-white font-bold text-lg 
+                        bg-orange-500 p-1 rounded-lg">
+                          Svelte
+                        </span>
+                      </ListItem>
+
+                      <ListItem link="https://tailwindcss.com">
+                        <span 
+                          className="drop-shadow-[0px_-0.3px_1.4px_rgba(34,211,238,1)]  text-white font-bold text-lg 
+                          bg-cyan-400 p-1 rounded-lg">
+                            TailwindCSS
+                        </span>
+                      </ListItem>
+
+                      <ListItem link="https://reactnative.dev">
+                          <span 
+                            className=" drop-shadow-[0px_-0.3px_1.4px_rgba(255,255,255,1)]  text-blue-300 hover:text-cyan-300 font-semibold text-lg 
+                            bg-neutral-900 p-1 rounded-lg">
+                            ReactNative
+                          </span>
+                      </ListItem>
+
                       </ol>
+                      <div className="border-t border-black m-2 text-black flex justify-center ">
+                        <a className="text-xl text-blue-600 hover:text-blue-400 focus-within:text-rose-600 hover:underline w-fit" href="./experience">
+                          Experience
+                        </a>
+                      </div>
                     </div>
 
            </div>
@@ -96,5 +114,25 @@ export default function Home() {
 
       
     </div>
+  )
+}
+
+
+
+//{children}:{children:ReactNode}
+//children belongs on props?
+//so using props again makes it show an error?
+//props:{link:string},{children}:{reactNode} => gives error.
+
+
+const ListItem = (props:{link:string,children:ReactNode}) => {
+  return (
+  <li className="ml-2 my-2 hover:translate-x-2 hover:duration-700 duration-700">
+      <a 
+        href={props.link}
+        target="_blank" rel="noopener noreferrer">
+          {props.children}
+      </a>
+    </li>
   )
 }
