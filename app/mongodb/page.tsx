@@ -38,16 +38,11 @@ const Testing = () => {
   
   return (
     <>
-
-      <head>
-        <link rel="icon" href="/favicon_mongo.svg"/>
-      </head>
-      
-      
-      <div className='bg-gradient-to-b from-zinc-700  to-zinc-900 h-screen overflow-auto'>
-        <Header/>
-      
-        <main className="flex justify-center mt-28">
+      <div className='bg-gradient-to-b from-zinc-700  to-zinc-900 h-screen overflow-auto text-black'>
+        <div className='mt-12'>
+          <Header/>
+        </div>
+        <main className="flex justify-center mt-40 ">
           <div className="max-w-xs py-5 pb-32"></div>
 
 
