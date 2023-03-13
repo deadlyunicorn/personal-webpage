@@ -6,9 +6,9 @@ const NavigationBar = () => (
   flex justify-evenly items-center">
 
     <NavItem icon="🏠" link="/"/>
-    <NavItem icon="🌊" link="/testing"/>      
-    <NavItem icon="💬" link="/testing"/>      
-    <NavItem icon="🔒" link="/testing"/>      
+    <NavItem icon="🌊" link="/mongodb"/>      
+    <NavItem icon="💬" link="/mongodb"/>      
+    <NavItem icon="🔒" link="/mongodb"/>      
   </nav>
 )
 
