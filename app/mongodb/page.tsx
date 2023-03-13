@@ -38,11 +38,11 @@ const Testing = () => {
   
   return (
     <>
-      <div className='bg-gradient-to-b from-zinc-700  to-zinc-900 h-screen overflow-auto text-black'>
+      <div className='bg-gradient-to-b from-zinc-700  to-zinc-900 h-screen flex flex-col justify-between overflow-auto text-black'>
         <div className='mt-12'>
           <Header/>
         </div>
-        <main className="flex justify-center mt-40 ">
+        <main className="flex justify-center  min-h-[420px]">
           <div className="max-w-xs py-5 pb-32"></div>
 
 
