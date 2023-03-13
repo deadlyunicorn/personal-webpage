@@ -6,7 +6,7 @@ import './globals.css'
 
 
 
-export default function Home() {
+export default function Homepage() {
   return (
     <div className=" bg-gradient-to-b from-blue-300 to-red-300 h-screen overflow-auto ">
         <div className="p-20  flex flex-col justify-center items-center ">
@@ -111,7 +111,7 @@ export default function Home() {
                         <Link 
                           className="text-lg text-emerald-500 hover:text-emerald-400 focus-within:text-rose-600 hover:underline w-fit"
                           href="/mongodb">
-                          Latest Development
+                          Latest
                         </Link>
                       </div>
                     </div>
