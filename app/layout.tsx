@@ -1,6 +1,14 @@
 import './globals.css'
-import { AnalyticsWrapper } from './components/analytics';
-import NavBar from './components/navBar';
+import { AnalyticsWrapper } from '@/app/components/analytics';
+import NavBar from '@/app/components/navBar';
+
+
+export const metadata = {
+  title: 'About me',
+  description: 'This is my personal webpage!',
+}
+
+
 export default function RootLayout({
   children,
 }: {
@@ -12,10 +20,12 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head />
+      <head>
+        <link rel="icon" href="/profilePicture_withShadow.png"/>
+      </head>
    
       <body>
-        <NavBar/>
+          <NavBar/>
         {children}
         <AnalyticsWrapper/>  
       </body>
