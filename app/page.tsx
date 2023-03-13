@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ReactNode } from 'react'
 import './globals.css'
+
 
 
 
@@ -13,7 +15,7 @@ export default function Home() {
           <div className="text-white drop-shadow-[1px_1px_3px_rgba(200,50,200,1)]  text-4xl hover:animate-pulse animate-bounce  text-center">DeadlyUnicorn</div>
           
           <div className=" shadow-xl rounded-t-md sm:h-56 h-48 overflow-hidden border border-white w-full lg:h-96 "><a href="https://www.linkedin.com/in/Alexandros-Petrache/" target="_blank" rel="noopener noreferrer">
-            <Image src="/profilePicture_withShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="md:-translate-y-14  -translate-y-12 "/></a>
+            <Image priority={true} src="/profilePicture_withShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="md:-translate-y-14  -translate-y-12 "/></a>
           </div>
           
           <div 
@@ -101,10 +103,16 @@ export default function Home() {
                       </ListItem>
 
                       </ol>
-                      <div className="border-t border-black m-2 text-black flex justify-center ">
-                        <a className="text-xl text-blue-600 hover:text-blue-400 focus-within:text-rose-600 hover:underline w-fit" href="./experience">
+                      <div className="border-t border-black m-2 text-black flex justify-around">
+                        <a className="text-lg text-blue-600 hover:text-blue-400 focus-within:text-rose-600 hover:underline w-fit" href="./experience">
                           Experience
                         </a>
+                        <span>·</span>
+                        <Link 
+                          className="text-lg text-emerald-500 hover:text-emerald-400 focus-within:text-rose-600 hover:underline w-fit"
+                          href="/mongodb">
+                          Latest Development
+                        </Link>
                       </div>
                     </div>
 
