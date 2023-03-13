@@ -10,18 +10,22 @@ export default function Time(){
   const [minutes,setMinutes]=useState(-1)
   
   useEffect(()=>{
+
+    const date = new Date;
     const timer = setInterval(()=>{
+
+
       setTime( prevState=>{ //previous State
         
-        const date = new Date;
         const currentTime = `${(date.getHours()<10?'0':'')+date.getHours()}:${(date.getMinutes()<10?'0':'')+date.getMinutes()}`
         
-        if(prevState!==currentTime){
+        if(prevState!=currentTime){
           setMinutes(minutes+1) 
         }
         return currentTime; //if prevState == currentTime, component doesn't rerender.
       });
     },1000); //update timer every 1 second
+    
     return () => {clearInterval(timer)} //clearInterval clock
   },[time,minutes])
 
@@ -36,7 +40,7 @@ export default function Time(){
     <>
       <div className="w-12">
 
-      {time=="30:00"?<LoadingTime/>:time}
+        {time==="30:00"?<LoadingTime/>:time}
       </div>
 
 
@@ -53,17 +57,16 @@ const LoadingTime = () => (
       <motion.div
         animate={{
           x:[0,-8,0,8],
-          height:['12px','8px','12px','8px']
+          height:[12,8,12,8]
         }}
         
         transition={{
-          type:"spring",
+          type:"keyframes",
           repeat:8,
           repeatType:"mirror",
           duration:1,
         }}
         className="border border-white bg-white w-1 h-3 drop-shadow-[0px_0px_4px_rgba(255,255,255,1)] rounded-full ">
-        
       </motion.div>
     </motion.div>
 )
