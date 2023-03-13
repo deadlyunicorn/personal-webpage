@@ -1,6 +1,9 @@
 'use client'
 
 
+import Header from './components/Header'
+import NavigationBar from './components/Navigation'
+
 import { motion } from "framer-motion"
 //
 import { useEffect, useState } from "react"
@@ -18,7 +21,7 @@ const {
 //
 
 
-const MongoApp = () => {
+const Testing = () => {
 
   const [pageLoad,setPageLoad]=useState(false);
 
@@ -35,29 +38,54 @@ const MongoApp = () => {
   
   return (
     <>
-      <div>
-        <div className="bg-white p-4 rounded-lg w-96 h-48">
-            <div className="text-center">Login to my App</div>
-            <br/>
-            <div
-              data-pageload={pageLoad}
-              className="data-[pageload=true]:inline animate-hidden hidden">
-  
-              <UserDetails user={user}/>
-              <div className="flex justify-between">
-                <LoginButton user={user} setUser={setUser}/>
-                {user&&<LogoutButton setUser={setUser}/>}
-              </div>
-            </div>
-        </div>
 
-        { user && <QueryField/>}
+      <head>
+        <link rel="icon" href="/favicon_mongo.svg"/>
+      </head>
+      
+      
+      <div className='bg-gradient-to-b from-zinc-700  to-zinc-900 h-screen overflow-auto'>
+        <Header/>
+      
+        <main className="flex justify-center mt-28">
+          <div className="max-w-xs py-5 pb-32"></div>
+
+
+
+          <div>
+            <div className="bg-white p-4 rounded-lg w-96 h-48">
+                
+                <div className="text-center">
+                  Login to my App
+                </div>
+                
+                <br/>
+                
+                <div
+                  data-pageload={pageLoad}
+                  className="data-[pageload=true]:inline animate-hidden hidden">
+      
+                  <UserDetails user={user}/>
+                  
+                  <div className="flex justify-between">
+                    <LoginButton user={user} setUser={setUser}/>
+                    {user&&<LogoutButton setUser={setUser}/>}
+                  </div>
+                </div>
+            </div>
+
+            { user && <QueryField/>}
+          </div>
+
+        </main>
+        <NavigationBar/>  
       </div>
+      
     </>
   )
 }
 
-export default MongoApp
+export default Testing
 
 const UserDetails = (
   {user}:{user:Realm.User|null}
@@ -137,7 +165,7 @@ const QueryField = () =>{
   //We put them here so that we don't get 
   //"cannot read properties of undefined error"
   const mongo = app.currentUser!.mongoClient("mongodb-atlas");
-  const collection = mongo.db("deadly_MongoApp").collection("movies");
+  const collection = mongo.db("deadly_testing").collection("movies");
 
 
   const [input,setInput]=useState("");
@@ -174,9 +202,7 @@ const QueryField = () =>{
               placeholder="Press 'Search'" 
               onChange={(event)=>{setInput(event.target.value)}}
               className="bg-slate-50 px-2 py-1 rounded-md"/>
-            <button className="border bg-slate-100 hover:bg-slate-200 px-2 py-1 rounded-md">
-              Search
-            </button>
+            <button className="border bg-slate-100 hover:bg-slate-200 px-2 py-1 rounded-md">Search</button>
           </form>
           <p className="text-xs">Try typing &quot;genres&quot;,&quot;languages&quot;</p>
 
