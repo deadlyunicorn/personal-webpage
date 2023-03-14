@@ -112,10 +112,16 @@ const LoginButton = (
   {setUser,user}:{setUser:(user:Realm.User)=>void,user:Realm.User|null}
 ) =>{
 
+  const [loading,setLoading]=useState(false)
   const login=async()=>{
-    const user:Realm.User = await app.logIn(Realm.Credentials.anonymous()); 
-    setUser(user);
-  }
+      if (!loading){
+      setLoading(true); //prevents multiple sessions if
+      //somebody clicks the button multipl times
+      const user:Realm.User = await app.logIn(Realm.Credentials.anonymous()); 
+      setUser(user);
+      setLoading(false);
+    }
+}
   
   if (!user)
   return (
