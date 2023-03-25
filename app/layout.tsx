@@ -4,7 +4,7 @@ import NavBar from '@/app/components/navBar';
 
 
 export const metadata = {
-  title: 'About me',
+  title: 'DeadlyUnicorn',
   description: 'This is my personal webpage!',
 }
 
