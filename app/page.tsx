@@ -15,15 +15,19 @@ export default function Homepage() {
           <div className="text-white drop-shadow-[1px_1px_3px_rgba(200,50,200,1)]  text-4xl hover:animate-pulse animate-bounce  text-center">DeadlyUnicorn</div>
           
           <div className=" shadow-xl rounded-t-md sm:h-56 h-48 overflow-hidden border border-white w-full lg:h-96 "><a href="https://www.linkedin.com/in/Alexandros-Petrache/" target="_blank" rel="noopener noreferrer">
-            <Image priority={true} src="/profilePicture_withShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="md:-translate-y-14  -translate-y-12 "/></a>
+            <Image priority={true} src="/profilePicture_withoutShadow.png" width="500" height="500" alt="My online avatar, a purple unicorn." className="-translate-y-7  scale-125 "/></a>
           </div>
           
           <div 
             className=" border-white border-t border-l  text-center bg-red-100 bg-opacity-50 rounded-b-md shadow-lg flex flex-col   ">
 
                 <div className="font-light p-1 text-black">
-
-                Just testing some stuff here. Feel&nbsp;free to explore this project, ask me any questions and&nbsp;
+                Hi I am Alex! 
+                <br/>My nickname is&nbsp;DeadlyUnicorn.
+                <br/>I am just testing some stuff here. 
+                <br/>Feel&nbsp;free to 
+                explore this project, ask me any questions 
+                and&nbsp;
                   <a 
                     href="https://www.linkedin.com/in/Alexandros-Petrache/" 
                     target="_blank" rel="noopener noreferrer" 
@@ -35,7 +39,7 @@ export default function Homepage() {
                 <div className="border-t border-black m-2 text-black flex flex-col ">
                   <p className="p-1 font-semibold "> BIO</p>  
                   <p className="font-light">I am a Web developer.</p>
-                  <p className="font-light">Currently I am interested&nbsp;in:</p>
+                  <p className="font-light">Currently I am working&nbsp;with:</p>
                   
                     
                     
@@ -69,6 +73,14 @@ export default function Homepage() {
                         </span>
                       </ListItem>
 
+                      <ListItem link="https://tailwindcss.com">
+                        <span 
+                          className="drop-shadow-[0px_-0.3px_1.4px_rgba(34,211,238,1)]  text-white font-bold text-lg 
+                          bg-cyan-400 p-1 rounded-lg">
+                            TailwindCSS
+                        </span>
+                      </ListItem>
+
                       <ListItem link="https://www.framer.com/motion/">
                         <span
                         className="text-lg text-white
@@ -77,7 +89,11 @@ export default function Homepage() {
                           Framer <span className="text-fuchsia-400">Motion</span>
                         </span>
                       </ListItem>
-
+                    </ol>
+                    <p className="font-light">
+                      I am also interested&nbsp;in:</p>
+                  
+                    <ol className='max-h-fit text-left mt-2 flex flex-col min-h-[60px]'>
                       <ListItem link="https://svelte.dev">
                         <span 
                         className="drop-shadow-[0px_-0.3px_1.4px_rgba(255,60,60,1)]  text-white font-bold text-lg 
@@ -86,13 +102,7 @@ export default function Homepage() {
                         </span>
                       </ListItem>
 
-                      <ListItem link="https://tailwindcss.com">
-                        <span 
-                          className="drop-shadow-[0px_-0.3px_1.4px_rgba(34,211,238,1)]  text-white font-bold text-lg 
-                          bg-cyan-400 p-1 rounded-lg">
-                            TailwindCSS
-                        </span>
-                      </ListItem>
+
 
                       <ListItem link="https://reactnative.dev">
                           <span 
@@ -103,18 +113,19 @@ export default function Homepage() {
                       </ListItem>
 
                       </ol>
+                      </div>
                       <div className="border-t border-black m-2 text-black flex justify-around">
                         <a className="text-lg text-blue-600 hover:text-blue-400 focus-within:text-rose-600 hover:underline w-fit" href="./experience">
                           Experience
                         </a>
                         <span>·</span>
                         <Link 
-                          className="text-lg text-emerald-500 hover:text-emerald-400 focus-within:text-rose-600 hover:underline w-fit"
-                          href="/mongodb">
-                          Latest
+                          className="text-lg text-red-500 hover:text-red-400 focus-within:text-rose-600 hover:underline w-fit"
+                          target="_blank" rel="noopener noreferrer"
+                          href="https://mongodb-social-app.vercel.app/">
+                          →Latest←
                         </Link>
                       </div>
-                    </div>
 
            </div>
            </div>
