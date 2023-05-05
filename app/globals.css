@@ -28,9 +28,11 @@ body {
   text-shadow: rgb(255, 255, 255) 0px 1px 1px;
 }
 
+
 #menu a:hover{
   color: rgb(207 250 254);
 }
+
 
 #infoPage_Links a{
   color:  rgb(199, 241, 254);
@@ -76,6 +78,21 @@ body {
 .customBounce {
   animation: customBounce 1s alternate-reverse;
   animation-iteration-count: 10;
+}
+
+#menu *{
+  display: none;
+}
+
+/* below is needed to have animation on PCs when hovering away.. */
+@media (min-width: 640px) {
+  #menu *{
+    display: flex;
+  }
+}
+
+#menu:hover *{
+  display: flex;
 }
 
 

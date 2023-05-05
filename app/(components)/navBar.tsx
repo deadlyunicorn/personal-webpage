@@ -7,17 +7,16 @@ export default function NavigationBar(){
     <div 
     id="menu"
     className="
-      fixed top-10 left-10
+      fixed top-10 sm:left-10 left-4
       max-w-[20px] max-h-5 overflow-hidden
       text-xl p-4
       
       border-white border-2 bg-white rounded-md
-      text-white 
-       
+      sm:text-white sm:hover:text-white hover:text-cyan-300 text-white
       duration-500
-      hover:bg-opacity-0 hover:max-h-40 hover:max-w-[160px]
-      
-      flex flex-col justify-evenly 
+      sm:hover:bg-opacity-0 hover:max-h-40 hover:max-w-[160px]
+
+      flex flex-col justify-evenly z-10
       ">
           <Link href="/">Homepage</Link>
           <Link href="/info">Information</Link>
@@ -31,6 +30,7 @@ export default function NavigationBar(){
               {/* Projects */}
             </span>
           </LinkLine>
+        
 
     </div>
   );

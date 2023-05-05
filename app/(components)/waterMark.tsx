@@ -6,7 +6,7 @@ export default function WaterMark(){
       className="
       absolute  right-0 bottom-8
       hover:-right-9
-      duration-1000" 
+      duration-1000 w-20 sm:w-48" 
       src="/Yuni_transparent_withShadow.png" 
       alt="A picture of my unicorn form"
       width={200}
