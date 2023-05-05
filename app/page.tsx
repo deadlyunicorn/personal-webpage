@@ -47,7 +47,7 @@ export default function Homepage() {
 
         <div id="socialLinks_container" className='flex justify-center gap-2 my-2'>
 
-          <LinkLine href="https://github.com/deadly-unicorn/">
+          <LinkLine href="https://github.com/deadlyunicorn/">
 
           
             <div className=" 
