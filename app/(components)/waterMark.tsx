@@ -4,7 +4,8 @@ export default function WaterMark(){
   return(
     <Image
       className="
-      absolute  right-0 bottom-8
+      absolute
+      right-0 bottom-8
       hover:-right-9
       duration-1000 w-20 sm:w-48" 
       src="/Yuni_transparent_withShadow.png" 
