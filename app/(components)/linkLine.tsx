@@ -5,7 +5,9 @@ const LinkLine = ({href,children}:{href:string,children:ReactNode}) => (
   <Link
   className="w-fit"
   href={href}
-  target="_blank" rel="noopener noreferrer">
+  target="_blank" rel="noopener noreferrer"
+  tabIndex={0}>
+    
     {children}
   </Link> 
 )

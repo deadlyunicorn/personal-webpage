@@ -60,7 +60,7 @@ body {
 
 
 /* don't confuse visibility with display! */
-#menu *{
+#menu a{
   visibility: hidden;
 }
 
@@ -78,25 +78,27 @@ body {
   }
 }
 
-#menu:hover *{
+#menu:hover a{
   animation: menuLinkDisplay 100ms;
   visibility: visible;
-
 }
 
+#menu:focus a{
+  animation: menuLinkDisplay 100ms;
+  visibility: visible;
+}
 
+#menu:focus-within a{
+  animation: menuLinkDisplay 100ms;
+  visibility: visible;
+}
 
-
-#menu a:hover{
+/* the below goes for all the sub link elements of the menu */
+#menu a:hover,a:focus{
   color: rgb(207 250 254);
 }
 
-/* below is needed to have animation on PCs when hovering away.. */
-@media (min-width: 640px) {
-  #menu *{
-    visibility: visible;
-  }
-}
+
 
 
 
