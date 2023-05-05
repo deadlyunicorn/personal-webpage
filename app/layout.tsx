@@ -1,6 +1,9 @@
+import Footer from './(components)/footer'
+import NavigationBar from './(components)/navBar'
+import WaterMark from './(components)/waterMark'
 import './globals.css'
-import { AnalyticsWrapper } from '@/app/components/analytics';
-import NavBar from '@/app/components/navBar';
+
+
 
 
 export const metadata = {
@@ -16,18 +19,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head>
-        <link rel="icon" href="/profilePicture_withShadow.png"/>
+        <link rel="icon" href="/Yuni_square.png"/>
       </head>
    
-      <body>
-          <NavBar/>
-        {children}
-        <AnalyticsWrapper/>  
+      <body 
+      className="
+      bg-gradient-to-b from-blue-300 to-red-300
+      w-full min-h-screen h-full 
+      flex flex-col justify-between items-center
+      -z-20
+      font-light text-slate-800">
+          <NavigationBar/>
+          {children}
+          <Footer/>
       </body>
     </html>
   )
