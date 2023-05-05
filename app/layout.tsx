@@ -8,7 +8,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'DeadlyUnicorn',
-  description: 'This is my personal webpage!',
+  description: 'This is the official website of Alexander Petrache, also known as DeadlyUnicorn.',
 }
 
 
