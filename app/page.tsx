@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ReactNode } from 'react'
 import './globals.css'
 import { RaleWay } from './(components)/font'
 import LinkLine from './(components)/linkLine'

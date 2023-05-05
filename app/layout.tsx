@@ -1,6 +1,5 @@
 import Footer from './(components)/footer'
 import NavigationBar from './(components)/navBar'
-import WaterMark from './(components)/waterMark'
 import './globals.css'
 
 
