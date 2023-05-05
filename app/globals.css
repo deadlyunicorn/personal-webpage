@@ -64,10 +64,28 @@ body {
   visibility: hidden;
 }
 
+@keyframes menuLinkDisplay {
+  0%{
+    visibility: hidden;
+  }
+  80%{
+    visibility: hidden;
+
+  }
+  100%{
+    visibility: visible;
+
+  }
+}
+
 #menu:hover *{
+  animation: menuLinkDisplay 100ms;
   visibility: visible;
 
 }
+
+
+
 
 #menu a:hover{
   color: rgb(207 250 254);
