@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import LinkLine from "../(components)/linkLine";
 import NewSection from "./sectionComponent";
+import "./infoPage.css"
 
 const ExperienceSection = () =>(
 

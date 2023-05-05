@@ -13,35 +13,8 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-#experience b{
-  font-weight: 800;
-  font-size: 1.125rem/* 18px */;
-  line-height: 1.75rem/* 28px */;
-  color: greenyellow;
-}
-
-#experience{
-  text-shadow: black 1px 1px 2px;
-}
-
-#experience button{
-  text-shadow: rgb(255, 255, 255) 0px 1px 1px;
-}
 
 
-#menu a:hover{
-  color: rgb(207 250 254);
-}
-
-
-#infoPage_Links a{
-  color:  rgb(199, 241, 254);
-}
-
-#infoPage_Links a:hover{
-  color: rgb(254 202 202);
-  text-decoration: underline;
-}
 
 
 @keyframes slowPulse {
@@ -58,12 +31,6 @@ body {
   }
 }
 
-#menu{
-  animation: alternate-reverse;
-  animation-iteration-count: 6;
-  animation-duration: 5s;
-  animation-name: slowPulse;
-}
 
 @keyframes customBounce {
   0% {
@@ -75,24 +42,44 @@ body {
     animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
+
 .customBounce {
   animation: customBounce 1s alternate-reverse;
   animation-iteration-count: 10;
 }
 
+
+
+#menu{
+  animation: alternate-reverse;
+  animation-iteration-count: 6;
+  animation-duration: 5s;
+  animation-name: slowPulse;
+}
+
+
+
+/* don't confuse visibility with display! */
 #menu *{
-  display: none;
+  visibility: hidden;
+}
+
+#menu:hover *{
+  visibility: visible;
+
+}
+
+#menu a:hover{
+  color: rgb(207 250 254);
 }
 
 /* below is needed to have animation on PCs when hovering away.. */
 @media (min-width: 640px) {
   #menu *{
-    display: flex;
+    visibility: visible;
   }
 }
 
-#menu:hover *{
-  display: flex;
-}
+
 
 
