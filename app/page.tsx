@@ -118,12 +118,13 @@ export default function Homepage() {
                   <div
                     className="
                     hover:-translate-y-2 duration-700
-                    text-green-400 hover:text-green-300 text-center
+                    text-green-400 hover:text-green-300
                     drop-shadow-[0px_-0.3px_1.4px_rgba(19,78,74,1)]
+                    flex items-center justify-center text-center
                     bg-teal-900 p-1 rounded-lg h-14 w-24">
                     
                     MongoDB
-                    <br/><span className='text-sm'>(Realm+Atlas)</span>
+                    <br/><span className='text-xs absolute translate-y-4'>(Realm+Atlas)</span>
                   </div>
                 </LinkLine>
               </div>
