@@ -4,7 +4,7 @@ import LinkLine from "./linkLine";
 export default function NavigationBar(){
 
   return(
-    <div
+    <nav
     id="menu"
     className="
       fixed top-10 sm:left-10 left-4
@@ -51,6 +51,6 @@ export default function NavigationBar(){
 
         
 
-    </div>
+    </nav>
   );
 };

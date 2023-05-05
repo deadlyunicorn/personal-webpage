@@ -10,17 +10,17 @@ export default function Homepage() {
     
     <div className="sm:max-w-xs lg:max-w-md max-w-xs pb-20 pt-10 text-center flex flex-col">
       
-      <div 
+      <header 
         id='usernameDisplay'
         className="
           text-white text-4xl 
           customBounce 
           drop-shadow-[1px_1px_3px_#a86bff] p-2">
         DeadlyUnicorn
-      </div>
+      </header>
 
       
-    <div 
+    <main 
       id='infoContainer'
       className=" 
       border-white border-t border-l rounded-b-md
@@ -189,7 +189,7 @@ export default function Homepage() {
               
         </div>
 
-      </div>
+      </main>
     </div>
 
       

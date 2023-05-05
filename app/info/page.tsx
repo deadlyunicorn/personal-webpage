@@ -11,13 +11,13 @@ const ExperienceSection = () =>(
           flex flex-col items-center 
           my-10 ">
 
-            <div className="
+            <header className="
               text-white drop-shadow-[1px_1px_3px_rgba(30,140,180,1)] 
               customBounce p-2
               text-4xl text-center">
               Information
-            </div>
-            <div
+            </header>
+            <main
               id="experience" 
               className=" 
                 border-white border-t border-l
@@ -32,7 +32,7 @@ const ExperienceSection = () =>(
               </Studies>
 
               <Links/>
-            </div>
+            </main>
         </div>
 )
 
@@ -46,16 +46,16 @@ const Background = () => {
   return(
   <>
     <NewSection title="Background">
-      I started <b>Web Developing</b> in May&nbsp;2022.
-      <br/>I&apos;ve been using <b>HTML, CSS, JavaScript</b> for over&nbsp;<b>{date.getFullYear()-2022}&nbsp;year(s).</b>
-      <br/><br/>I&apos;ve been fascinated by the <em>Internet</em> <b>since a young age.</b>
-      <br/>New <em>technologies</em> was always a reason to get me <b>excited and curious.</b>
-      <br/>Having access to a personal computer <em>for&nbsp;years</em> has made using one a <b>second&nbsp;nature</b> to me.
-      <br/><br/>The <em>first contact</em> I had with programming was with <b>Python</b>, back <em>in Elementary&nbsp;school</em>, out of my own curiousity. 
-      <br/>I have been using <em><b>Linux</b> Distributions</em> as my <em>primary OS</em>, since then as well. 
+      I started <strong>Web Developing</strong> in May&nbsp;2022.
+      <br/>I&apos;ve been using <strong>HTML, CSS, JavaScript</strong> for over&nbsp;<strong>{date.getFullYear()-2022}&nbsp;year(s).</strong>
+      <br/><br/>I&apos;ve been fascinated by the <em>Internet</em> <strong>since a young age.</strong>
+      <br/>New <em>technologies</em> was always a reason to get me <strong>excited and curious.</strong>
+      <br/>Having access to a personal computer <em>for&nbsp;years</em> has made using one a <strong>second&nbsp;nature</strong> to me.
+      <br/><br/>The <em>first contact</em> I had with programming was with <strong>Python</strong>, back <em>in Elementary&nbsp;school</em>, out of my own curiousity. 
+      <br/>I have been using <em><strong>Linux</strong> Distributions</em> as my <em>primary OS</em>, since then as well. 
       <br/><br/>Despite following another fields during my high school years, it didn&apos;t take me long to realize
-      <br/>that I want to devote <em>the rest of my life</em> to something that <em>gives me the ability <b>to&nbsp;create</b></em> with infinite posibilities,
-      <br/><em><b><u><div className="hover:rotate-[420deg] hover:duration-1000 duration-1000 hover:translate-x-60">programming.</div></u></b></em> 
+      <br/>that I want to devote <em>the rest of my life</em> to something that <em>gives me the ability <strong>to&nbsp;create</strong></em> with infinite posibilities,
+      <br/><em><strong><u><div className="hover:rotate-[420deg] hover:duration-1000 duration-1000 hover:translate-x-60">programming.</div></u></strong></em> 
     </NewSection>
     <hr className="my-1"/>
 
@@ -66,8 +66,8 @@ const Background = () => {
 const Studies = ({children}:{children:ReactNode}) =>(
   <>
     <NewSection title="Studies">
-      In October 2022 I&apos;d <b>started studying</b> on the specialty of 
-      <br/>&quot;<b><em>Informatics&nbsp;Applications&nbsp;Technician</em></b>&quot; 
+      In October 2022 I&apos;d <strong>started studying</strong> on the specialty of 
+      <br/>&quot;<strong><em>Informatics&nbsp;Applications&nbsp;Technician</em></strong>&quot; 
       <br/>at the Public Vocational School of Peristeri, Athens.
       {children}
     </NewSection>
@@ -80,9 +80,9 @@ const FirstSemester = ()=>(
     <>
       <NewSection title="First Semester">
         <u>Oct. - Feb. 2022-23</u>
-        <br/>I&apos;ve been taught some basics in <b>C&nbsp;programming&nbsp;language.</b>
-        <br/>I&apos;ve been taught to a great extent <b>Microsoft&nbsp;Office tools.</b>
-        <br/>I&apos;ve practiced <b>Linux&nbsp;bash&nbsp;commands.</b>
+        <br/>I&apos;ve been taught some basics in <strong>C&nbsp;programming&nbsp;language.</strong>
+        <br/>I&apos;ve been taught to a great extent <strong>Microsoft&nbsp;Office tools.</strong>
+        <br/>I&apos;ve practiced <strong>Linux&nbsp;bash&nbsp;commands.</strong>
       </NewSection>
       <hr className="my-1"/>
 
@@ -93,10 +93,10 @@ const SecondSemester = ()=>(
   <>
     <NewSection title="Second Semester">
       <u>Feb. - June 2023</u>
-      <br/>We&apos;ve been taught the <b>C++&nbsp;programming&nbsp;language</b> fundamentals in depth.
-      <br/>We&apos;ve overviewed the <b>Python&nbsp;programming&nbsp;language </b> and got some taste of a <b>CMS</b> (Webnode).
-      <br/>We&apos;ve practiced some basic <b>SQL.</b>
-      <br/>We&apos;ve overviewed some core concepts of <b>HTML5&nbsp;and CSS.</b>
+      <br/>We&apos;ve been taught the <strong>C++&nbsp;programming&nbsp;language</strong> fundamentals in depth.
+      <br/>We&apos;ve overviewed the <strong>Python&nbsp;programming&nbsp;language </strong> and got some taste of a <strong>CMS</strong> (Webnode).
+      <br/>We&apos;ve practiced some basic <strong>SQL.</strong>
+      <br/>We&apos;ve overviewed some core concepts of <strong>HTML5&nbsp;and CSS.</strong>
     </NewSection>
     <hr className="my-1"/>
 
