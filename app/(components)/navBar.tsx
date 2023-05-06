@@ -7,7 +7,8 @@ export default function NavigationBar(){
     <nav
     id="menu"
     className="
-      fixed top-10 sm:left-10 left-4
+      fixed z-10 
+      top-10 sm:left-10 left-4
       max-w-[40px] max-h-10 overflow-hidden
       text-xl
       
