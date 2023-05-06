@@ -25,15 +25,146 @@ export default function Homepage() {
       bg-red-100 bg-opacity-50
       shadow-lg flex flex-col text-lg
       ">
-            
-      <div className={RaleWay}>
+      
+        <Summary/>
+        <Connect/>
+
+      </main>
+    </div>
+
+      
+  )
+}
+
+
+const Summary = () =>{
+  return(
+    <div 
+    id='summaryContainer'
+    className="
+      p-2 pb-4
+      border-b  border-black 
+      flex flex-col ">
+    <div className={RaleWay}>
+
 
         <p>
           Hi I am Alex! 
+          <br/>I am also known as&nbsp;
+          <span className='
+            text-violet-900 hover:text-violet-700'>
+              DeadlyUnicorn.
+          </span>
         </p>
 
+
+      <p className="p-1 font-semibold underline">Summary</p>  
+      <p className="font-light">I am a Web developer.</p>
+      <p className="font-light">Currently I am working&nbsp;with:</p>
+      
+        
+      
+      <div className="max-h-fit text-left mt-2 flex flex-col min-h-[60px] gap-4">
+        
+        <div id='toolRow1' className='flex justify-center gap-4 mt-2'>
+
+          <LinkLine href="https://nextjs.org">
+            <div 
+              className='
+              hover:-translate-y-2 duration-700
+              drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)]
+              bg-zinc-900 p-1 rounded-lg h-14 w-24
+              flex items-center justify-center
+              text-slate-200 hover:text-white'>
+
+                  NextJS
+            </div>
+          </LinkLine>
+
+
+          <LinkLine href="https://realm.mongodb.com">
+            <div
+              className="
+              hover:-translate-y-2 duration-700
+              text-green-400 hover:text-green-300
+              drop-shadow-[0px_-0.3px_1.4px_rgba(19,78,74,1)]
+              flex items-center justify-center text-center
+              bg-teal-900 p-1 rounded-lg h-14 w-24">
+              
+              MongoDB
+              <br/><span className='text-xs absolute translate-y-4'>(Realm+Atlas)</span>
+            </div>
+          </LinkLine>
+        </div>
+
+        <div id='toolRow2' className='flex justify-center gap-4 mb-4'>
+
+          <LinkLine href="https://tailwindcss.com">
+            <div
+              className="
+              hover:translate-y-2 duration-700
+              text-slate-200 hover:text-white font-bold 
+              drop-shadow-[0px_-0.3px_1.4px_rgba(34,211,238,1)]  
+              flex items-center justify-center text-center
+              bg-cyan-400 p-1 rounded-lg  h-14 w-24">
+                Tailwind
+                <span className='text-xs'>CSS</span>
+            </div>
+          </LinkLine>
+
+        
+        </div>
+
+      </div>
+
+      <p className="font-light">
+        I also have good experience&nbsp;with:</p>
+
+      <div id='expRow1' className='flex justify-center gap-4 mt-4'>
+
+        <LinkLine href="https://isocpp.org">
+          <div 
+            className='
+            hover:-translate-y-2 duration-700
+            drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,160,1)]
+            bg-blue-900 p-1 rounded-lg h-10 w-12
+            flex items-center justify-center
+            text-slate-200 hover:text-white font-bold'>
+
+                C++
+          </div>
+        </LinkLine>
+
+
+        <LinkLine href="https://www.office.com">
+          <div
+            className="
+            
+            hover:-translate-y-2 duration-700
+            drop-shadow-[0px_-0.3px_1.4px_rgba(255,60,60,1)]  
+          bg-orange-500
+          text-slate-200 hover:text-white font-bold  text-center
+           p-1 rounded-lg  h-10 w-20">
+            
+            <span className='text-xs'>MS</span>Office
+          </div >
+        </LinkLine>
+        
+      </div>
+            
+      
+    </div>
+        
+  </div>
+
+  )
+}
+
+const Connect = () =>{
+  return(
+    <div className={RaleWay}>
+
         <p>
-          <br/>My nickname is&nbsp;<span className='text-violet-900 hover:text-violet-700'>DeadlyUnicorn.</span>
           <br/>You can find information 
           <br/>about&nbsp;me&nbsp;here,
           <br/>and also some of my projects!
@@ -78,117 +209,5 @@ export default function Homepage() {
         </div>
             
       </div>
-        
-        <div 
-          id='summaryContainer'
-          className="
-            m-2
-            border-t border-black 
-            flex flex-col ">
-          <div className={RaleWay}>
-
-            <p className="p-1 font-semibold">Summary</p>  
-            <p className="font-light">I am a Web developer.</p>
-            <p className="font-light">Currently I am working&nbsp;with:</p>
-            
-              
-            
-            <div className="max-h-fit text-left mt-2 flex flex-col min-h-[60px] gap-4">
-              
-              <div id='toolRow1' className='flex justify-center gap-4 mt-2'>
-
-                <LinkLine href="https://nextjs.org">
-                  <div 
-                    className='
-                    hover:-translate-y-2 duration-700
-                    drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,0,1)]
-                    bg-zinc-900 p-1 rounded-lg h-14 w-24
-                    flex items-center justify-center
-                    text-slate-200 hover:text-white'>
-
-                        NextJS
-                  </div>
-                </LinkLine>
-
-
-                <LinkLine href="https://realm.mongodb.com">
-                  <div
-                    className="
-                    hover:-translate-y-2 duration-700
-                    text-green-400 hover:text-green-300
-                    drop-shadow-[0px_-0.3px_1.4px_rgba(19,78,74,1)]
-                    flex items-center justify-center text-center
-                    bg-teal-900 p-1 rounded-lg h-14 w-24">
-                    
-                    MongoDB
-                    <br/><span className='text-xs absolute translate-y-4'>(Realm+Atlas)</span>
-                  </div>
-                </LinkLine>
-              </div>
-
-              <div id='toolRow2' className='flex justify-center gap-4 mb-4'>
-
-                <LinkLine href="https://tailwindcss.com">
-                  <div
-                    className="
-                    hover:translate-y-2 duration-700
-                    text-slate-200 hover:text-white font-bold 
-                    drop-shadow-[0px_-0.3px_1.4px_rgba(34,211,238,1)]  
-                    flex items-center justify-center text-center
-                    bg-cyan-400 p-1 rounded-lg  h-14 w-24">
-                      Tailwind
-                      <span className='text-xs'>CSS</span>
-                  </div>
-                </LinkLine>
-
-              
-              </div>
-
-            </div>
-
-            <p className="font-light">
-              I also have good experience&nbsp;with:</p>
-
-            <div id='expRow1' className='flex justify-center gap-4 mt-4'>
-
-              <LinkLine href="https://isocpp.org">
-                <div 
-                  className='
-                  hover:-translate-y-2 duration-700
-                  drop-shadow-[0px_-0.3px_1.4px_rgba(0,0,160,1)]
-                  bg-blue-900 p-1 rounded-lg h-10 w-12
-                  flex items-center justify-center
-                  text-slate-200 hover:text-white font-bold'>
-
-                      C++
-                </div>
-              </LinkLine>
-
-
-              <LinkLine href="https://www.office.com">
-                <div
-                  className="
-                  
-                  hover:-translate-y-2 duration-700
-                  drop-shadow-[0px_-0.3px_1.4px_rgba(255,60,60,1)]  
-                bg-orange-500
-                text-slate-200 hover:text-white font-bold  text-center
-                 p-1 rounded-lg  h-10 w-20">
-                  
-                  <span className='text-xs'>MS</span>Office
-                </div >
-              </LinkLine>
-              
-            </div>
-                  
-            
-          </div>
-              
-        </div>
-
-      </main>
-    </div>
-
-      
   )
 }
