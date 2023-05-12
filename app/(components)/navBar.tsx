@@ -36,6 +36,8 @@ export default function NavigationBar(){
 
             <Link href="/" tabIndex={0}>Homepage</Link>
             <Link href="/info" tabIndex={0}>Information</Link>
+            <Link href="/resume" tabIndex={0}>Resume</Link>
+
             <LinkLine href="https://mongodb-social-app.vercel.app/">
               <span className="text-red-100 hover:text-inherit underline">
                 {/* focus text doesn't get cyan.. Actually fixed, you added the class to the span... */}
