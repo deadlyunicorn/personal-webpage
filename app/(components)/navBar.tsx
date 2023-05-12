@@ -36,7 +36,7 @@ export default function NavigationBar(){
 
             <Link href="/" tabIndex={0}>Homepage</Link>
             <Link href="/info" tabIndex={0}>Information</Link>
-            <LinkLine href="/resume">Resume</LinkLine>
+            <LinkLine href="https://cv-job-resume.vercel.app">Resume</LinkLine>
 
             <LinkLine href="https://mongodb-social-app.vercel.app/">
               <span className="text-red-100 hover:text-inherit underline">
