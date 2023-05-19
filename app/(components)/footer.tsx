@@ -13,6 +13,7 @@ export default function Footer(){
       {/* we need relative to make the absolute watermark work */}
     <WaterMark/>
     <p>Thank you for visiting my website!</p>
+    <p>This website was built by <em>Alexander Petrache</em> also known as &quot;<em>deadlyunicorn</em>&quot;.</p>
 
   </footer>
   )
