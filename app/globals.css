@@ -95,7 +95,7 @@ body {
 
 /* the below goes for all the sub link elements of the menu */
 #menu a:hover,a:focus,a:focus span{
-  color: rgb(207 250 254);
+  color:  rgb(101, 215, 228)
 }
 
 

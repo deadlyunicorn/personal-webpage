@@ -14,38 +14,56 @@ export default function NavigationBar(){
       
       border-white border-2 bg-white rounded-md
       
-      sm:text-white 
-      sm:hover:text-white hover:text-cyan-300 text-white
-      sm:focus:text-white focus:text-cyan-300
+      sm:text-cyan-600 text-cyan-600
+      sm:hover:text-cyan-600 hover:text-cyan-600 
+      sm:focus:text-cyan-600 focus:text-cyan-600
       duration-500
 
       
-      sm:hover:bg-opacity-0 
-      sm:focus:bg-opacity-0 
-      sm:focus-within:bg-opacity-0 
-      hover:max-h-40 hover:max-w-[160px]
-      focus:max-h-40 focus:max-w-[160px]
-      focus-within:max-h-40 focus-within:max-w-[160px]
+       
+      group
+       
+      hover:max-h-[400px] hover:max-w-[160px]
       ">
+        <div className="
+          flex items-center justify-center w-full h-full
+          absolute group-hover:hidden rotate-90 text-3xl">III</div>
           <button className="absolute -z-10 w-full h-full">
           </button>
 
           <div 
             className="
+            text-center
               flex flex-col justify-evenly z-10 p-4">
 
-            <Link href="/" tabIndex={0}>Homepage</Link>
-            <Link href="/info" tabIndex={0}>Information</Link>
-            <LinkLine href="https://cv-job-resume.vercel.app">Resume</LinkLine>
+            <Link className="hidden group-hover:inline" href="/" tabIndex={0}>Homepage</Link>
+            <Link className="hidden group-hover:inline" href="/info" tabIndex={0}>Information</Link>
+            <div className="w-full">
+              <LinkLine href="https://cv-job-resume.vercel.app">Resume</LinkLine>
+            </div>
 
-            <LinkLine href="https://mongodb-social-app.vercel.app/">
-              <span className="text-red-100 hover:text-inherit underline">
-                {/* focus text doesn't get cyan.. Actually fixed, you added the class to the span... */}
-                Latest
-              </span>
-            </LinkLine>
-            <LinkLine href="https://mongodb-social-app.vercel.app/">
-              <span className="text-red-100 hover:text-inherit underline">
+
+            <LinkLine href="https://the-cool-webstore-deadlyunicorn.vercel.app/">
+                <span className="w-[100px] text-emerald-600 underline hover:text-inherit">
+                  {/* focus text doesn't get cyan.. Actually fixed, you added the class to the span... */}
+                  Mock Webstore
+                </span>
+              </LinkLine>
+
+            <div className="
+              min-w-[100px]
+              relative h-10 group-hover:inline hidden">
+              <div className="absolute bottom-0 right-0 text-xs text-black"> reworking rn..</div>
+              <LinkLine href="https://the-amazing-social.vercel.app/">
+                <span className=" text-red-600 underline hover:text-inherit">
+                  {/* focus text doesn't get cyan.. Actually fixed, you added the class to the span... */}
+                  Social App
+                </span>
+              </LinkLine>
+            </div>
+
+            <LinkLine href="https://the-amazing-social.vercel.app/">
+              <span className="text-red-600 underline hover:text-inherit">
                 {/* Projects */}
               </span>
             </LinkLine>
